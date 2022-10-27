@@ -49,6 +49,7 @@
   "scripts": {
     "devserver": "nodemon server.js",
     "server": "node server.js",
+    "start": "react-scripts start",
     "dev": "set PORT=2095 && react-scripts start",
     "prod": "set PORT=80 && react-scripts start",
     "build": "react-scripts build",

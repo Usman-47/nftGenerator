@@ -35,11 +35,14 @@ export const FoldersRarity = (props) => {
               <div>
                 <ListItem key={index2} button component="a" href="#">
                   <img
-                    src={require(`.${subfolder.path
-                      .slice(15)
-                      .replaceAll("\\", "/")}`)}
-                    alt="item"
-                    style={{ maxWidth: "40%" }}
+                    // src={require(`.${subfolder.path
+                    //   .slice(15)
+                    //   .replaceAll("\\", "/")}`)}
+                    // alt="item"
+                    // style={{ maxWidth: "40%" }}
+                    src={`${
+                      process.env.REACT_APP_SERVERURL
+                    }${subfolder.path.slice(12)}`}
                   />
                   <Typography
                     className="elementSubfolder"

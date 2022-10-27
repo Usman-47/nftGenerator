@@ -36,7 +36,10 @@ export const Items = (props) => {
                 }}
               >
                 <img
-                  src={require(`.${file.path.slice(12).replaceAll("\\", "/")}`)}
+                  // src={require(`.${file.path.slice(12).replaceAll("\\", "/")}`)}
+                  src={`${process.env.REACT_APP_SERVERURL}${file.path.slice(
+                    12
+                  )}`}
                   alt="x"
                   style={{
                     width: file.width,

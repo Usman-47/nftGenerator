@@ -72,11 +72,14 @@ export const DemoCarousel = () => {
               <div className="carouselElement">
                 <div>
                   <img
-                    src={require(`.${object.path
-                      .slice(12)
-                      .replaceAll("\\", "/")}`)}
-                    alt="img"
-                    style={{ maxHeight: "20vh" }}
+                    // src={require(`.${object.path
+                    //   .slice(12)
+                    //   .replaceAll("\\", "/")}`)}
+                    // alt="img"
+                    // style={{ maxHeight: "20vh" }}
+                    src={`${process.env.REACT_APP_SERVERURL}${object.path.slice(
+                      12
+                    )}`}
                   />
                 </div>
                 <div style={{ fontWeight: "bold" }}>{`${object.name
