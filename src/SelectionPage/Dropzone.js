@@ -7,7 +7,7 @@ import { IconButton } from "@material-ui/core";
 import { PhotoCamera } from "@material-ui/icons";
 import "react-toastify/dist/ReactToastify.css";
 
-import img from '../assets/images/Frame.png'
+import img from "../assets/images/Frame.png";
 
 export function MyDropzone() {
   const [loaded, setLoaded] = React.useState(0);
@@ -25,7 +25,7 @@ export function MyDropzone() {
       });
 
     axios
-      .post("http://localhost:8443/uploadPath", folderPath)
+      .post(`${process.env.REACT_APP_SERVERURL}/uploadPath`, folderPath)
       .then(function (response) {
         console.log(response);
       })
@@ -35,7 +35,7 @@ export function MyDropzone() {
       });
 
     axios
-      .post("http://localhost:8443/uploadFiles", formData, {
+      .post(`${process.env.REACT_APP_SERVERURL}/uploadFiles`, formData, {
         onUploadProgress: (ProgressEvent) => {
           setLoaded((ProgressEvent.loaded / ProgressEvent.total) * 100);
         },
@@ -57,7 +57,7 @@ export function MyDropzone() {
   });
 
   return (
-    <div style={{ zIndex: 2,  }}>
+    <div style={{ zIndex: 2 }}>
       <div style={{ zIndex: 2 }} {...getRootProps()}>
         <input
           style={{ zIndex: 2 }}
@@ -73,7 +73,12 @@ export function MyDropzone() {
             color="primary"
             aria-label="upload picture"
             component="span"
-            style={{ zIndex: 2, display:"flex", justifyContent: "center", alignItems:"center" }}
+            style={{
+              zIndex: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
             size="medium"
           >
             {/* <PhotoCamera /> */}
@@ -97,7 +102,6 @@ export function MyDropzone() {
       </div>
       <div
         style={{
-          
           zIndex: 2,
           display: "flex",
           justifyContent: "center",

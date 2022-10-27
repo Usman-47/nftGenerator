@@ -27,6 +27,10 @@ const port = 8443;
 
 const dirTree = require("directory-tree");
 
+// app.get("/", (req, res) => {
+//   res.send("Working");
+// });
+
 app.get("/getFolderTree", (req, res) => {
   const uuid = req.query.uuid;
   const tree = dirTree(`src/EditingPage/layers/${uuid}`);
@@ -328,7 +332,11 @@ app.get("/resolveFiles", function (req, res, next) {
 
   return res.status(200).json("Success");
 });
-
+app.use("/", express.static(path.join(__dirname, "src/EditingPage/")));
+app.use(express.static("./build"));
+app.all("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+});
 app.listen(port, () => {
   // Uncommented for connecting to mongoDB
   // dbo.connectToServer(function (err) {

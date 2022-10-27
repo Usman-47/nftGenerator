@@ -14,7 +14,7 @@ export const Fluidity = () => {
   const [finalModal, setFinalModal] = React.useState(false);
 
   const handleClickGenerate = async () => {
-    const baseURL = "http://localhost:8443/compress";
+    const baseURL = `${process.env.REACT_APP_SERVERURL}/compress`;
     setLoading(true);
     const response = await axios
       .get(baseURL, {
@@ -34,11 +34,11 @@ export const Fluidity = () => {
 
   const handleClickDownload = () => {
     setLoading(true);
-    axios.post("http://localhost:8443/deleteLocalFiles", {
+    axios.post(`${process.env.REACT_APP_SERVERURL}/deleteLocalFiles`, {
       uuid: JSON.parse(sessionStorage.uuid),
     });
     axios
-      .get("http://localhost:8443/upload", {
+      .get(`${process.env.REACT_APP_SERVERURL}/upload`, {
         params: { uuid: JSON.parse(sessionStorage.uuid) },
       })
       .then(function (response) {})
@@ -66,7 +66,7 @@ export const Fluidity = () => {
       //   link.click();
       // });
       axios
-        .get("http://localhost:8443/resolveFiles", {
+        .get(`${process.env.REACT_APP_SERVERURL}/resolveFiles`, {
           params: { uuid: JSON.parse(sessionStorage.uuid) },
         })
         .then(function (response) {
@@ -84,7 +84,7 @@ export const Fluidity = () => {
     const data = {
       uuid: JSON.parse(sessionStorage.uuid),
     };
-    axios.post("http://localhost:8443/deleteLocalFiles", data);
+    axios.post(`${process.env.REACT_APP_SERVERURL}/deleteLocalFiles`, data);
     setFinalModal(false);
   };
 

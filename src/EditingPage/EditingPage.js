@@ -16,7 +16,7 @@ export const NumberOfCopies = React.createContext();
 export const TreeContext = React.createContext();
 
 export const EditingPage = () => {
-  const baseURL = "http://localhost:8443/getFolderTree";
+  const baseURL = `${process.env.REACT_APP_SERVERURL}/getFolderTree`;
 
   const [fileData, setFileData] = React.useState(null);
 

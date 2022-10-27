@@ -1,5 +1,5 @@
 // const baseURL = "http://sickalien.store:5000/getFolderTree";
-const baseURL = "http://localhost:8443/getFolderTree";
+const baseURL = `${process.env.REACT_APP_SERVERURL}/getFolderTree`;
 
 export const getTree = async () => {
   const response = await fetch(baseURL, {
