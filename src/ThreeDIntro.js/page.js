@@ -32,7 +32,7 @@ export const ThreeData = () => {
     window.location.href = "/selection";
   };
   return (
-    <div style={{ backgroundColor: "#000" }}>
+    <div className="landing-page-main-div">
       <div>
         <div style={{ zIndex: 3 }}>
           <NavHomePage
@@ -83,7 +83,7 @@ export const ThreeData = () => {
             }}
           >
             <span aria-hidden="true">Sick Alien</span>
-            Sick Alien
+            Ragin Roosters
             <span aria-hidden="true">Sick Alien</span>
           </p>
         </div>
@@ -96,7 +96,7 @@ export const ThreeData = () => {
               fontSize: "30px",
             }}
           >
-            NFT AUTOMATOR
+            COLLECTION GENERATOR
           </h3>
         </div>
 
@@ -122,12 +122,12 @@ export const ThreeData = () => {
             A tool to take the pain of creating NFTs away from you.
           </p>
         </div>
-        <img
+        {/* <img
           src={require("./Alien.png")}
           alt="AlienImage"
           className="imageBackground"
           style={{ zIndex: 2 }}
-        />
+        /> */}
         <div>
           <AboutModalComponent
             isOpen={openAbout}

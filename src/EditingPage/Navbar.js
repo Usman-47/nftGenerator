@@ -57,12 +57,13 @@ export const NavComponent = (props) => {
             style={{
               fontFamily: "monospace",
               animation: "glow 2s ease-in-out infinite alternate",
-              marginLeft: "76vw",
+              marginLeft: "70vw",
+              
             }}
             className="landingNavMenu"
             onClick={(event) => (window.location.href = "/")}
           >
-            NFT Automator
+            COLLECTION GENERATOR
           </Typography>
         </Toolbar>
       </AppBar>
