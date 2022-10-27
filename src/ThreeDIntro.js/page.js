@@ -82,9 +82,9 @@ export const ThreeData = () => {
               color: "#000",
             }}
           >
-            <span aria-hidden="true">Sick Alien</span>
+            {/* <span aria-hidden="true">Sick Alien</span> */}
             Ragin Roosters
-            <span aria-hidden="true">Sick Alien</span>
+            {/* <span aria-hidden="true">Sick Alien</span> */}
           </p>
         </div>
 
@@ -111,8 +111,9 @@ export const ThreeData = () => {
           <p
             className="homepageContent"
             style={{
-              marginTop: "49vh",
-              bottom: "0",
+              
+            position:"absolute",
+            bottom:"5%",
               zIndex: 3,
               fontFamily: "monospace",
               fontWeight: "400",

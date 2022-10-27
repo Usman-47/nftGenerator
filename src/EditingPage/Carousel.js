@@ -28,7 +28,7 @@ export const DemoCarousel = () => {
   };
 
   return (
-    <div>
+    <div style={{color:"white"}}>
       <div
         style={{
           justifyContent: "center",

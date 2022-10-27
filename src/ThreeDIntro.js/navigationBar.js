@@ -3,6 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import {NavLink} from "react-router-dom"
+import logo from '../assets/images/logo.png'
+
+
+
+
+
+
+
 
 // Using Inline Styling
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 // Exporting Default Navbar to the App.js File
 export const NavHomePage = (props) => {
+ 
   const classes = useStyles();
 
   return (
@@ -29,24 +39,29 @@ export const NavHomePage = (props) => {
       <Toolbar
         variant="dense"
         style={{
-          zIndex: 10,
-          backgroundColor: "#2b2b2b30",
+        
 
           borderRadius: "10px",
-          height: "25px",
+          display:"flex",
+          justifyContent:"space-between"
         }}
       >
-        <div className="eachOne">
+     
+       <div>
+        <img width="300px" src={logo} alt="" />
+       </div>
+       <div style={{ display:"flex"}}>
+       <div className="eachOne">
           <Typography
             variant="h6"
             color="inherit"
             className="landingNavMenu"
-            style={{ fontFamily: "monospace" }}
+            style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px" }}
             onClick={() => {
               props.setInstructionsOpen(true);
             }}
           >
-            HOME
+            MINTING NOW
           </Typography>
         </div>
 
@@ -55,12 +70,12 @@ export const NavHomePage = (props) => {
             variant="h6"
             color="inherit"
             className="landingNavMenu"
-            style={{ fontFamily: "monospace" }}
+            style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px" }}
             onClick={() => {
               props.setContactOpen(true);
             }}
           >
-            CONTACT
+            UPCOMING MINTS
           </Typography>
         </div>
 
@@ -69,15 +84,35 @@ export const NavHomePage = (props) => {
             variant="h6"
             color="inherit"
             className="landingNavMenu"
-            style={{ fontFamily: "monospace" }}
+            style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px" }}
             onClick={() => {
               props.setAboutOpen(true);
             }}
           >
-            ABOUT US
+            CREATE
           </Typography>
         </div>
+        <div className="eachOne">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="landingNavMenu"
+            style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px" }}
+            onClick={() => {
+              props.setAboutOpen(true);
+            }}
+          >
+            NFT TOOL SUIT
+          </Typography>
+        </div>
+       </div>
       </Toolbar>
     </AppBar>
+
+  
+
+
+
+   
   );
 };

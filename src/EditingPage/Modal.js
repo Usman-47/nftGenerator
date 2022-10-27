@@ -108,7 +108,7 @@ export const ModalComponent = (props) => {
   return (
     <div>
       <Modal
-     style={{overflowY:"scroll"}}   
+     style={{overflowY:"scroll"}}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.isOpen}
@@ -366,6 +366,7 @@ export const ModalComponent = (props) => {
                   }}
                 >
                   <Button
+                  style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)'}}
                     variant="contained"
                     color="secondary"
                     size="large"
@@ -388,6 +389,7 @@ export const ModalComponent = (props) => {
                   }}
                 >
                   <Button
+                  style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)'}}
                     variant="contained"
                     color="secondary"
                     size="large"

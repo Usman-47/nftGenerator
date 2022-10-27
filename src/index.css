@@ -23,13 +23,17 @@
 
 .MuiInputBase-input{
   color: #B1B1B1 !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25) !important;
-  background: rgba(0, 0, 0, 0.25) !important;
+  border-bottom: unset !important;
+  /* background: rgba(0, 0, 0, 0.25) !important; */
   padding: 10px !important;
   border-radius: 8px !important;
+  border: 1px solid #32306A !important;
+}
+.MuiInputBase-input:active{
+  border-bottom: unset !important;
 }
 .MuiInputBase-input:hover{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25) !important;
+  border-bottom: unset !important;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -40,7 +44,36 @@ input[type=number]::-webkit-outer-spin-button {
 .review{
   background-image: url('./assets/images/review-bg.png');
   background-repeat: no-repeat;
-  /* background-position: center; */
+  background-position: center;
   background-size: 100% 100%;
+  /* margin: 0 auto !important; */
   padding: 50px 0 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+.MuiToolbar-gutters{
+  padding-left: unset !important;
+}
+
+
+@media screen and (max-width: 700px) {
+  .final_modal{
+    overflow: scroll;
+    width: 95% !important;
+    border-radius: 10px !important;
+  }
+  .links-div{
+    background-color: unset !important;
+  }
+  .glitch{
+    font-size: 40px !important;
+  }
+  .homepageContent{
+    font-size: 12px !important;
+  }
+
+  .landingNavMenu{
+    font-size: 12px !important;
+  }
+  
 }

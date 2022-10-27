@@ -9,14 +9,18 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 1000,
+  width: '60%',
   height: 650,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  borderRadius: "10px",
+  // bgcolor: "background.paper",
+  // border: "2px solid #000",
+  // boxShadow: 24,
+  // borderRadius: "10px",
   p: 4,
-  backgroundColor: "#525050d7",
+  
+  backgroundColor: '#4E39D7',
+boxshadow: 'inset -24px -24px 30px rgba(0, 0, 0, 0.25) !important',
+borderRadius: '40px',
+
 };
 
 export const FinalModalComponent = (props) => {
@@ -34,7 +38,7 @@ export const FinalModalComponent = (props) => {
         }}
       >
         <Fade in={props.isOpen}>
-          <Box sx={style}>
+          <Box sx={style} className="final_modal">
             <div
               className="typewriter"
               style={{
@@ -43,14 +47,14 @@ export const FinalModalComponent = (props) => {
                 color: "#fff",
               }}
             >
-              <h3> 🎉🎉 Woohoooo !! Check Generated Folder...</h3>
+              <h3 style={{fontFamily:"poppins-light"}}> 🎉🎉 Woohoooo !! Check Generated Folder...</h3>
             </div>
             <div
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
                 color: "#fff",
-                fontFamily: "monospace",
+                fontFamily: "poppins-light",
                 marginTop: "20px",
               }}
             >
@@ -61,7 +65,7 @@ export const FinalModalComponent = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#fff",
-                fontFamily: "monospace",
+                fontFamily: "poppins-light",
                 marginTop: "30px",
               }}
             >
@@ -76,7 +80,7 @@ export const FinalModalComponent = (props) => {
                 display: "flex",
                 justifyContent: "flex-start",
                 color: "#fff",
-                fontFamily: "monospace",
+                fontFamily: "poppins-light",
                 marginTop: "30px",
               }}
             >
@@ -84,17 +88,19 @@ export const FinalModalComponent = (props) => {
             </div>
 
             <div
+            className="links-div"
               style={{
                 display: "flex",
                 justifyContent: "center",
-                fontFamily: "monospace",
+                fontFamily: "poppins-light",
                 marginTop: "30px",
-                backgroundColor: "rgb(119 119 119 / 84%)",
+                backgroundColor: "rgba(39, 36, 52, 0.5)",
                 padding: "10px",
                 borderRadius: "10px",
+                
               }}
             >
-              <ol>
+              <ol style={{width:"100%"}}>
                 <p
                   style={{
                     display: "flex",
@@ -146,7 +152,7 @@ export const FinalModalComponent = (props) => {
                 display: "flex",
                 justifyContent: "flex-start",
                 color: "#fff",
-                fontFamily: "monospace",
+                fontFamily: "poppins-light",
                 marginTop: "30px",
               }}
             >

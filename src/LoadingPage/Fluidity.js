@@ -90,16 +90,17 @@ export const Fluidity = () => {
 
   return (
     <div className="trans">
-      <div style={{ maxHeight: "20px", zIndex: 21 }}>
+      <div>
         <NavComponent />
       </div>
 
       <div
         style={{
-          background: "#00000000",
-          paddingTop: "50vh",
+          // background: "#00000000",
+          paddingTop: "20vh",
           display: "flex",
           justifyContent: "center",
+          marginBottom:"200px"
         }}
       >
         <div
@@ -107,6 +108,7 @@ export const Fluidity = () => {
           style={{
             maxWidth: "71vw",
             maxHeight: "8vh",
+            color:"white"
           }}
         >
           <h2>Patience ... Awesome things on the way !&nbsp; </h2>
@@ -116,10 +118,11 @@ export const Fluidity = () => {
         style={{
           justifyContent: "center",
           display: "flex",
-          marginTop: "50px",
+          // marginTop: "50px",
         }}
       >
         <Button
+        style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
           variant="contained"
           color="secondary"
           size="large"

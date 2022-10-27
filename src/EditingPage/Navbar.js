@@ -3,14 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-
+import logo from '../assets/images/logo.png'
 // Using Inline Styling
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    primary: {
-      main: "000",
-    },
+   
+    // flexGrow: 1,
+    // primary: {
+    //   main: "000",
+    // },
   },
 }));
 
@@ -29,15 +30,17 @@ export const NavComponent = (props) => {
 
   return (
     <div className={classes.root} style={{ color: "#212529" }}>
-      <AppBar position="sticky" style={{ background: "rgb(16, 16, 32)" }}>
-        <Toolbar variant="dense">
+      <AppBar position="sticky" style={{ background: "transparent", boxShadow:"unset", }}>
+        <Toolbar variant="dense" style={{ display:"flex", justifyContent:"space-between", }}>
+        <a  href="https://linktr.ee/nft_paradise">
           <img
-            style={{ maxWidth: "50px", marginLeft: "0.5vw" }}
-            src={require("./AlienLogo.png")}
+            // style={{ maxWidth: "185px",  }}
+            // src={require("./AlienLogo.png")}
+            src={logo}
             alt="alien"
           />
-
-          <Typography
+ </a>
+          {/* <Typography
             variant="h6"
             color="#fff"
             style={{
@@ -49,7 +52,7 @@ export const NavComponent = (props) => {
             <a className="landingNavMenu" href="https://linktr.ee/nft_paradise">
               Sick Alien
             </a>
-          </Typography>
+          </Typography> */}
 
           <Typography
             variant="h6"
@@ -57,7 +60,7 @@ export const NavComponent = (props) => {
             style={{
               fontFamily: "monospace",
               animation: "glow 2s ease-in-out infinite alternate",
-              marginLeft: "70vw",
+              // marginLeft: "70vw",
               
             }}
             className="landingNavMenu"

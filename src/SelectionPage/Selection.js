@@ -103,7 +103,7 @@ export const Selection = () => {
         </div>
       </div>
 
-      <div className="area">
+      <div className="">
         <ul className="circles">
           <li></li>
           <li></li>

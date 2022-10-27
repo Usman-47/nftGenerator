@@ -6,18 +6,22 @@ import { Fade, CircularProgress } from "@material-ui/core";
 import "./loadingAnimation.css";
 
 const style = {
+  background: '#4E39D7',
+  boxShadow: 'inset -24px -24px 30px rgba(0, 0, 0, 0.25)',
+  borderRadius: '40px',
+
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 1000,
-  height: 650,
-  bgcolor: "background.paper",
+  // width: 1000,
+  // height: 650,
+  // bgcolor: "background.paper",
   border: "2px solid #000",
-  boxShadow: 24,
-  borderRadius: "10px",
+  // boxShadow: 24,
+  // borderRadius: "10px",
   p: 4,
-  backgroundColor: "#525050d7",
+  // backgroundColor: "#525050d7",
 };
 
 export const LoadingModalComponent = (props) => {
@@ -43,7 +47,7 @@ export const LoadingModalComponent = (props) => {
                 color: "#fff",
               }}
             >
-              <h2>Files are being processed...</h2>
+              <h2 style={{fontFamily:"Muller-Light"}}>Files are being processed...</h2>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div class="spinner-box">

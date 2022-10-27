@@ -193,7 +193,7 @@ export const Page = (props) => {
             parent={parentRef}
           />
         </div>
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "right",
@@ -207,7 +207,7 @@ export const Page = (props) => {
           <p>
             Selection: {selection.name} &nbsp; X: {coord.x} Y: {coord.y}
           </p>
-        </div>
+        </div> */}
       </div>
       <div
         style={{
