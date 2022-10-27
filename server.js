@@ -199,6 +199,7 @@ app.post("/submitDetails", (request, response) => {
       item.children.forEach((item) => {
         weights.push(item.rarity ? item.rarity : 50);
       });
+
       const idx = wr(weights);
 
       const obj = item.children[idx];
