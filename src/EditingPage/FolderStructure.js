@@ -9,11 +9,10 @@ import { useTheme } from "@material-ui/core/styles";
 import { TreeView } from "@material-ui/lab";
 import TreeItem from "@material-ui/lab/TreeItem";
 import { Folders } from "./BuildFolder";
-
+import logo from '../assets/images/logo.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    paddingTop: 5,
   },
 }));
 
@@ -23,15 +22,21 @@ export default function TreesTemp(props) {
   const treeData = props.folderData;
 
   return (
-    <div className={classes.root} style={{ marginTop: "20px" }}>
-      <div
+    <div className={classes.root}>
+    <a href="https://linktr.ee/nft_paradise">
+    <img width="80%" src={logo} alt="" style={{ marginBottom: "10px" }}/>
+    </a>
+    <div style={{ padding: "10px"}}>
+    <div
         style={{
           justifyContent: "center",
           display: "flex",
-          fontWeight: "bold",
-          fontSize: "20px",
-          fontFamily: "monospace",
+          // fontWeight: 800,
+          fontSize: "25px",
+          fontFamily: "Muller-ExtraBold",
           color: "#fff",
+          textTransform:"uppercase",
+         
         }}
       >
         Folder Structure
@@ -41,11 +46,14 @@ export default function TreesTemp(props) {
           aria-label="file system navigator"
           defaultCollapseIcon={<IconButton />}
           defaultExpandIcon={<MenuIcon />}
-          sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: "auto" }}
+          sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: "auto", background:"red" }}
         >
           <Folders children={treeData && treeData.children} />
         </TreeView>
       </List>
+      
+    </div>
+      
     </div>
   );
 }

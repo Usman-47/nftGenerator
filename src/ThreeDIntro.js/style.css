@@ -26,11 +26,15 @@ html,body {
   }
 
   .landingNavMenu {
-    font-style: normal;
+    color: white !important;
+    font-family: Muller-ExtraBold;
     z-index: 1;
-    font-weight: "bold";
-    animation: glow 2s ease-in-out infinite alternate;
+    /* font-weight: 800; */
+    font-size: 30px;
+    /* animation: glow 2s ease-in-out infinite alternate; */
     text-align: center;
+    background: rgba(0, 0, 0, 0.3) !important;
+    padding: 15px 0 15px 0;
   }
 
   .landingNavMenu:hover {

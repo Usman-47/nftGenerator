@@ -32,28 +32,30 @@ export const Folders = (props) => {
     <div>
       {children &&
         children.map((folder, index1) => (
-          <div>
+          <div  style={{marginBottom:"20px", border:"1px solid #32306A", borderRadius:"12px",}}>
             <ListItem key={index1} button component="a" href="#">
               <Typography
-                style={{ backgroundColor: "#102841" }}
+                // style={{  }}
                 className="element"
                 // eslint-disable-next-line react/jsx-no-duplicate-props
                 style={{
                   fontWeight: "bold",
                   fontFamily: "monospace",
+                  backgroundColor: "rgba(0, 0, 0, 0.2)"
                 }}
               >
                 {folder.name.slice(0, 1).toUpperCase() + folder.name.slice(1)}
               </Typography>
             </ListItem>
 
-            {folder.children.map((subfolder, index2) => (
+          <div>
+          {folder.children.map((subfolder, index2) => (
               <div onClick={() => handleClick(folder.name, subfolder)}>
-                <ListItem key={index2} button component="a" href="#">
+                <ListItem key={index2} button component="a" href="#" style={{borderBottom:"1px solid #2F2861",}}>
                   <Typography
                     className="elementSubfolder"
                     style={{
-                      fontFamily: "monospace",
+                      fontFamily: "Poppins",
                     }}
                   >
                     {subfolder.name}
@@ -61,6 +63,7 @@ export const Folders = (props) => {
                 </ListItem>
               </div>
             ))}
+          </div>
             <TreeItem
               nodeId="1"
               label={

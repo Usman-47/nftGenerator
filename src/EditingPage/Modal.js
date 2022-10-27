@@ -17,12 +17,12 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 1000,
   height: 650,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  // bgcolor: "background.paper",
+  // border: "2px solid #000",
   boxShadow: 24,
   borderRadius: "10px",
-  p: 4,
-  backgroundColor: "#525050d7",
+  padding: "30px 70px 20px 20px"
+  // backgroundColor: "#525050d7",
 };
 
 export const ModalComponent = (props) => {
@@ -108,6 +108,7 @@ export const ModalComponent = (props) => {
   return (
     <div>
       <Modal
+     style={{overflowY:"scroll"}}   
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.isOpen}
@@ -119,35 +120,41 @@ export const ModalComponent = (props) => {
         }}
       >
         <Fade in={props.isOpen}>
-          <Box sx={style}>
+          <Box sx={style}  >
             {!next && (
               <div
+             
                 style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.336)",
+                  // backgroundColor: "rgba(255, 255, 255, 0.336)",
                   padding: "10px",
                   borderRadius: "20px",
                 }}
               >
                 <div
+                 
                   style={{
                     justifyContent: "center",
                     display: "flex",
                     fontWeight: "bold",
                     fontSize: "20px",
-                    fontFamily: "monospace",
+                    fontFamily: "Muller-ExtraBold",
+                    marginBottom:"20px",
+                    color:"white",
                   }}
                 >
                   REVIEW
                 </div>
-                <div
+            <div className="review">
+                  <div>
+                  <div
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -167,6 +174,8 @@ export const ModalComponent = (props) => {
                     width: "500px",
                     marginLeft: "10px",
                     borderRadius: "10px",
+                    background: 'linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)',
+                    border: '1px solid #32306A',
                   }}
                 />
 
@@ -174,11 +183,11 @@ export const ModalComponent = (props) => {
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -205,11 +214,11 @@ export const ModalComponent = (props) => {
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -236,11 +245,11 @@ export const ModalComponent = (props) => {
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -290,11 +299,11 @@ export const ModalComponent = (props) => {
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -320,11 +329,11 @@ export const ModalComponent = (props) => {
                   style={{
                     justifyContent: "flex-start",
                     display: "flex",
-                    fontSize: "20px",
+                    fontSize: "14px",
                     fontWeight: 500,
-                    fontFamily: "monospace",
+                    fontFamily: "poppins-light",
                     marginTop: "30px",
-                    color: "#000",
+                    color: "#CECECE",
                     marginLeft: "1%",
                   }}
                 >
@@ -347,6 +356,8 @@ export const ModalComponent = (props) => {
                     borderRadius: "10px",
                   }}
                 />
+                  </div>
+            </div>
                 <div
                   style={{
                     justifyContent: "center",

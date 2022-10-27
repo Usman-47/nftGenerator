@@ -112,10 +112,10 @@ export const EditingPage = () => {
             value={{ total: NumberOfCopiesState, dispatch3 }}
           >
             <CssBaseline>
-              <div style={{ maxHeight: "20px", zIndex: 21 }}>
+              {/* <div style={{ maxHeight: "20px", zIndex: 21 }}>
                 <NavComponent folderStructure={fileData} />
-              </div>
-              <div style={{ margin: "2px" }}>
+              </div> */}
+              <div>
                 <Page
                   folderStructure={fileData}
                   selection={selection}

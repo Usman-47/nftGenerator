@@ -10,11 +10,12 @@ export const EditorInput = (props) => {
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
 
   const commonStyle = {
-    margin: "10px",
-    backgroundColor: "#c1c9d1",
-    padding: "5px",
-    borderRadius: "10px",
-    boxShadow: "1px 3px 1px #afafaf",
+    margin: "10px 5px 10px 5px",
+    background: "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+    border:"1px solid #32306A",
+    padding: "10px 20px 0px 10px",
+    borderRadius: "12px",
+    fontSize:"14px"
   };
 
   const handleFinalClick = () => {
@@ -30,10 +31,11 @@ export const EditorInput = (props) => {
     <div
       style={{
         marginTop: "10px",
-        backgroundColor: "#dee2e7",
+        backgroundColor: "",
         padding: "7px",
         borderRadius: "10px",
-        boxShadow: "1px 3px 1px #acacaf",
+        // boxShadow: "1px 3px 1px #acacaf",
+        color:"#CECECE"
       }}
     >
       <div
@@ -41,8 +43,8 @@ export const EditorInput = (props) => {
           justifyContent: "center",
           display: "flex",
           fontWeight: "bold",
-          fontSize: "20px",
-          fontFamily: "monospace",
+          fontSize: "25px",
+          fontFamily: "Muller-Light",
         }}
       >
         Manual Input
@@ -55,7 +57,7 @@ export const EditorInput = (props) => {
           <TextField
             size="small"
             variant="standard"
-            inputProps={{ style: { textAlign: "center" } }}
+            inputProps={{ style: { textAlign: "center", color:"#F5F5F5" } }}
             placeholder="(in px)"
             onChange={(event) => {
               setInput1({
@@ -75,7 +77,7 @@ export const EditorInput = (props) => {
         <TextField
           size="small"
           variant="standard"
-          inputProps={{ style: { textAlign: "center" } }}
+          inputProps={{ style: { textAlign: "center", color:"#F5F5F5" } }}
           placeholder="(in px)"
           onChange={(event) => {
             setInput2({ name: "width", value: JSON.parse(event.target.value) });
@@ -92,7 +94,7 @@ export const EditorInput = (props) => {
         <TextField
           size="small"
           defaultValue={100}
-          inputProps={{ min: 0, style: { textAlign: "center" } }}
+          inputProps={{ min: 0, style: { textAlign: "center", color:"#F5F5F5" } }}
           margin="dense"
           variant="outlined"
           onChange={(event) => {
@@ -104,7 +106,11 @@ export const EditorInput = (props) => {
         />
       </div>
       <div style={{ justifyContent: "center", display: "flex" }}>
-        <Button variant="contained" color="primary" onClick={handleFinalClick}>
+        <Button style={{ backgroundColor: "transparent",
+                  border:"1px solid #C615A9",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  fontSize: "13px",}} variant="contained" color="primary" onClick={handleFinalClick}>
           Submit
         </Button>
       </div>

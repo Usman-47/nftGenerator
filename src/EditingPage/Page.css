@@ -11,5 +11,5 @@
 }
 
 .imageDimensions {
-    background-color: rgba(255, 255, 255, 0.24);
+    background: linear-gradient(180deg, rgba(29, 16, 66, 0.91) 0%, rgba(61, 35, 116, 0.73) 100%);
 }

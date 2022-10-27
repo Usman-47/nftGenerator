@@ -7,6 +7,8 @@ import { IconButton } from "@material-ui/core";
 import { PhotoCamera } from "@material-ui/icons";
 import "react-toastify/dist/ReactToastify.css";
 
+import img from '../assets/images/Frame.png'
+
 export function MyDropzone() {
   const [loaded, setLoaded] = React.useState(0);
   const onDrop = useCallback((acceptedFiles) => {
@@ -55,7 +57,7 @@ export function MyDropzone() {
   });
 
   return (
-    <div style={{ zIndex: 2 }}>
+    <div style={{ zIndex: 2,  }}>
       <div style={{ zIndex: 2 }} {...getRootProps()}>
         <input
           style={{ zIndex: 2 }}
@@ -71,10 +73,11 @@ export function MyDropzone() {
             color="primary"
             aria-label="upload picture"
             component="span"
-            style={{ zIndex: 2, justifyContent: "center", display: "flex" }}
+            style={{ zIndex: 2, display:"flex", justifyContent: "center", alignItems:"center" }}
             size="medium"
           >
-            <PhotoCamera />
+            {/* <PhotoCamera /> */}
+            <img src={img} alt="" />
           </IconButton>
         )}
 
@@ -94,7 +97,7 @@ export function MyDropzone() {
       </div>
       <div
         style={{
-          marginTop: "270px",
+          
           zIndex: 2,
           display: "flex",
           justifyContent: "center",

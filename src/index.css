@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: "Muller-Light";
+    src: url(./assets/fonts/Muller-Narrow-Font-Family/MullerNarrow-Light.otf);
+  }
+  @font-face {
+    font-family: "Muller-ExtraBold";
+    src: url(./assets/fonts/Muller-Narrow-Font-Family/MullerNarrow-ExtraBold.otf);
+  }
+
+  @font-face {
+    font-family: "poppins-light";
+    src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
+  }
+
+.upload-file-main-div{
+    background-image: url('./assets/images/Vector\ 11.png');
+    background-repeat: no-repeat;   
+    background-position: center;
+    height: 400px !important;
+   
+}
+
+.MuiInputBase-input{
+  color: #B1B1B1 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+}
+.MuiInputBase-input:hover{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25) !important;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: inner-spin-button !important;
+    opacity: 1 !important;
+}
+
+.review{
+  background-image: url('./assets/images/review-bg.png');
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100% 100%;
+  padding: 50px 0 20px 20px;
+}

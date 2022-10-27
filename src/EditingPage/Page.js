@@ -11,7 +11,7 @@ import { ModalComponent } from "./Modal";
 import { LoadingModalComponent } from "./loadingModal";
 import axios from "axios";
 import { RarityModalComponent } from "./RarityModal";
-
+import TotalCopies from "./totalCopies";
 export const Page = (props) => {
   const { dispatch1 } = React.useContext(ObjectContext);
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
@@ -127,12 +127,12 @@ export const Page = (props) => {
     <div>
       <div
         style={{
-          width: "15%",
+          width: "18%",
           float: "left",
-          backgroundColor: "rgb(23, 23, 44)",
-          height: "100vh",
-          padding: "5px",
-          borderRadius: "10px",
+          backgroundColor: "#272434",
+          minHeight: "100vh",
+         
+          // borderRadius: "10px",
           overflowX: "hidden",
           overflowY: "auto",
           zIndex: 20,
@@ -143,21 +143,23 @@ export const Page = (props) => {
       </div>
       <div
         style={{
-          width: "70%",
+          width: "61%",
           float: "left",
-          height: "100vh",
-          padding: "5px",
+          minHeight: "100vh",
+          // padding: "5px",
+          
         }}
       >
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            backgroundColor: "rgba(110, 110, 110, 0.658)",
-            color: "#fff",
-            fontFamily: "monospace",
-            marginTop: "3vh",
-            paddingRight: "5px",
+            backgroundColor: "rgba(39, 36, 52, 0.5)",
+            color: "#CECECE",
+            fontFamily: "Poppins",
+            // marginTop: "3vh",
+            // paddingRight: "5px",
+            padding:'30px 0 30px 0'
           }}
         >
           <p>
@@ -209,28 +211,37 @@ export const Page = (props) => {
       </div>
       <div
         style={{
-          width: "15%",
+          width: "21%",
           float: "right",
-          borderRadius: "10px",
+          // borderRadius: "10px",
           zIndex: 20,
-          marginTop: "10px",
+          // marginTop: "10px",
         }}
       >
         <div
           style={{
-            backgroundColor: "#efefef",
-            height: "100vh",
-            margin: "5px 0px 5px 5px ",
-            padding: "5px",
-            boxShadow:
-              "-5px 2px 4px -1px rgb(0 0 0 / 20%), -5px 4px 5px 0px rgb(0 0 0 / 14%), -5px 1px 10px 0px rgb(0 0 0 / 12%)",
+            backgroundColor: "#272434",
+            minHeight: "100vh",
+            margin: "0px 0px 5px 0px",
+        
+            // boxShadow:
+            //   "-5px 2px 4px -1px rgb(0 0 0 / 20%), -5px 4px 5px 0px rgb(0 0 0 / 14%), -5px 1px 10px 0px rgb(0 0 0 / 12%)",
           }}
         >
+        <div
+            variant="h6"
+            color="inherit"
+            className="landingNavMenu"
+            onClick={(event) => (window.location.href = "/")}
+          >
+            COLLECTION GENERATOR
+          </div>
           <div>
             <Editor currentValues={props.hashedElements} />
           </div>
           <div>
-            <EditorInput setValues={editValues} />
+            {/* <EditorInput setValues={editValues} /> */}
+            <TotalCopies/>
           </div>
           <div
             style={{
@@ -242,8 +253,9 @@ export const Page = (props) => {
               <Button
                 variant="contained"
                 style={{
-                  borderRadius: 35,
-                  backgroundColor: "#f50057",
+                  // borderRadius: 2,
+                  backgroundColor: "transparent",
+                  border:"1px solid #C615A9",
                   color: "#fff",
                   padding: "10px 20px",
                   fontSize: "13px",
@@ -251,7 +263,7 @@ export const Page = (props) => {
                 size="medium"
                 onClick={handleRarityOpen}
               >
-                💎 Add Rarity 💎
+                💎 Add Rarity
               </Button>
             </div>
             <div
@@ -263,7 +275,7 @@ export const Page = (props) => {
             >
               <Button
                 variant="contained"
-                style={{ backgroundColor: "#21b6ae", color: "#fff" }}
+                style={{ background: "linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)", color: "#fff", padding: "10px 36px", fontFamily:"Poppins"}}
                 size="large"
                 onClick={
                   totalCopies && totalCopies.value > 10000 ? null : handleOpen
