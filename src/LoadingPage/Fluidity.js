@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { NavComponent } from "../EditingPage/Navbar";
+import { NavHomePage } from "../ThreeDIntro.js/navigationBar";
 import { ToastContainer, toast } from "react-toastify";
 import { Button, CircularProgress } from "@material-ui/core";
 
@@ -91,7 +91,7 @@ export const Fluidity = () => {
   return (
     <div className="trans">
       <div>
-        <NavComponent />
+        <NavHomePage/>
       </div>
 
       <div
@@ -111,7 +111,7 @@ export const Fluidity = () => {
             color:"white"
           }}
         >
-          <h2>Patience ... Awesome things on the way !&nbsp; </h2>
+          {/* <h2>Patience ... Awesome things on the way !&nbsp; </h2> */}
         </div>
       </div>
       <div
@@ -126,7 +126,7 @@ export const Fluidity = () => {
           variant="contained"
           color="secondary"
           size="large"
-          onClick={handleClickGenerate}
+          // onClick={handleClickGenerate}
           disabled={loading}
         >
           Generate Link

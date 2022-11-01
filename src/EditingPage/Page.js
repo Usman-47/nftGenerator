@@ -1,8 +1,9 @@
 import React from "react";
-
+import Slider from "@material-ui/core/Slider";
 import { Editor } from "./Editor";
 import { Items } from "./Items";
 import { NumberOfCopies, ObjectContext, ObjectSelection } from "./EditingPage";
+import { Typography, TextField } from "@material-ui/core";
 import { EditorInput } from "./EditorInput";
 import TreesTemp from "./FolderStructure";
 import { Button } from "@material-ui/core";
@@ -12,8 +13,16 @@ import { LoadingModalComponent } from "./loadingModal";
 import axios from "axios";
 import { RarityModalComponent } from "./RarityModal";
 import TotalCopies from "./totalCopies";
+
 export const Page = (props) => {
-  const { dispatch1 } = React.useContext(ObjectContext);
+  const { objects, dispatch1 } = React.useContext(ObjectContext);
+  
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  // const { dispatch1 } = React.useContext(ObjectContext);
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
   const { dispatch3 } = React.useContext(NumberOfCopies);
   const [totalCopies, setTotalCopies] = React.useState({ value: 0 });
@@ -126,22 +135,23 @@ export const Page = (props) => {
   return (
     <div>
       <div
+      className="editor-left"
         style={{
           width: "18%",
           float: "left",
           backgroundColor: "#272434",
-          minHeight: "100vh",
-         
-          // borderRadius: "10px",
+          height: "100vh",
           overflowX: "hidden",
           overflowY: "auto",
           zIndex: 20,
           transition: "width .35s",
+
         }}
       >
         <TreesTemp folderData={props.folderStructure} />
       </div>
       <div
+      className="editor-mid"
         style={{
           width: "61%",
           float: "left",
@@ -151,37 +161,110 @@ export const Page = (props) => {
         }}
       >
         <div
+        className="canvas_inputs"
           style={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-around",
+            gap:"50px",
             backgroundColor: "rgba(39, 36, 52, 0.5)",
             color: "#CECECE",
             fontFamily: "Poppins",
             // marginTop: "3vh",
             // paddingRight: "5px",
-            padding:'30px 0 30px 0'
+            padding:'20px 0 20px 0',
+            margin:"0 50px 0 50px"
           }}
         >
-          <p>
-            Canvas Height:{" "}
-            <input
+          <div style={{border: '1px solid #32306A', borderRadius:"12px", padding:"0px 20px", width:"30%", display:"flex", justifyContent:"space-between", alignItems:"center", gap:"10px"}}>
+          <div style={{width:"250px"}}>
+            Height: <br />
+          
+           
+           <Slider
+              value={canvasHeight.value}
+              valueLabelDisplay="auto"
+              onChange={(event, value) => {
+                setCanvasHeight({value});
+                      }}
+              min={0}
+              max={1000}
+              />
+     </div>
+     {/* <input
+            className="input_field"
+
               onChange={(event) => {
                 setCanvasHeight({
                   value: JSON.parse(event.target.value),
                 });
               }}
-            />
-            &nbsp; px &nbsp;Canvas Width:{" "}
-            <input
+            /> */}
+            <TextField
+     className="editor_textfield mid_textFields"
+      id="contact phone number"
+      type="number"
+      placeholder="0"
+      margin="normal" 
+      // value={currentSlide}
+      onChange={(event) => {
+                setCanvasHeight({
+                  value: JSON.parse(event.target.value),
+                });
+              }}
+        />
+          
+            
+          </div>
+          <div style={{border: '1px solid #32306A', borderRadius:"12px", padding:"0px 20px",  width:"30%", display:"flex", justifyContent:"space-between", alignItems:"center",  gap:"5px"}}>
+          <div style={{width:"250px"}}>
+          Width: <br />
+         
+          <Slider
+            value={canvasWidth.value}
+            valueLabelDisplay="auto"
+            onChange={(event, value) => {
+              
+                      setCanvasWidth({value});
+                    }}
+            min={0}
+            max={1000}
+          />
+          </div>
+         
+          {/* <input
+            className="input_field"
+           
               onChange={(event) => {
                 setCanvasWidth({
                   value: JSON.parse(event.target.value),
                 });
               }}
-            />
-            &nbsp; px
-          </p>
+            /> */}
+
+<TextField
+     className="editor_textfield mid_textFields"
+      id="contact phone number"
+      type="number"
+      placeholder="0"
+      margin="normal" 
+      // value={currentSlide}
+      onChange={(event) => {
+                setCanvasWidth({
+                  value: JSON.parse(event.target.value),
+                });
+              }}
+        />
+        
+            
+                {/* <div style={{maxWidth:"200px", margin:"0 auto"}}>
+            
+            </div> */}
+          
+          </div>
         </div>
+       
+        
+        
         <div id="content">
           <Items
             onClick={setCurrentElement}
@@ -210,19 +293,22 @@ export const Page = (props) => {
         </div> */}
       </div>
       <div
+      className="editor-right"
         style={{
           width: "21%",
           float: "right",
           // borderRadius: "10px",
           zIndex: 20,
           // marginTop: "10px",
+         
         }}
       >
         <div
           style={{
             backgroundColor: "#272434",
-            minHeight: "100vh",
+            height: "100vh",
             margin: "0px 0px 5px 0px",
+            overflowY:"auto"
         
             // boxShadow:
             //   "-5px 2px 4px -1px rgb(0 0 0 / 20%), -5px 4px 5px 0px rgb(0 0 0 / 14%), -5px 1px 10px 0px rgb(0 0 0 / 12%)",
@@ -231,7 +317,7 @@ export const Page = (props) => {
         <div
             variant="h6"
             color="inherit"
-            className="landingNavMenu"
+            className="landingNavMenu collection-generator"
             onClick={(event) => (window.location.href = "/")}
           >
             COLLECTION GENERATOR
@@ -240,8 +326,8 @@ export const Page = (props) => {
             <Editor currentValues={props.hashedElements} />
           </div>
           <div>
-            {/* <EditorInput setValues={editValues} /> */}
-            <TotalCopies/>
+            <EditorInput setValues={editValues} />
+            {/* <TotalCopies/> */}
           </div>
           <div
             style={{

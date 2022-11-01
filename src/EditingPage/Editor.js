@@ -1,4 +1,5 @@
 import React from "react";
+import Hidden from '@material-ui/core/Hidden';
 import { SliderComponent } from "./Slider";
 import { ObjectContext, ObjectSelection } from "./EditingPage";
 import { Typography, TextField } from "@material-ui/core";
@@ -23,7 +24,9 @@ export const Editor = (props) => {
 
   const currentValues = React.useRef(
     props.currentValues.find((obj) => obj.name === selection.name)
+   
   );
+  console.log(props, 'currentvalues props');
 
   React.useEffect(() => {
     currentValues.current =
@@ -41,6 +44,7 @@ export const Editor = (props) => {
       }}
     >
       <div
+      className="editor"
         style={{
           justifyContent: "center",
           display: "flex",
@@ -63,17 +67,15 @@ export const Editor = (props) => {
         <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
         
         <div style={{display:"flex", justifyContent:"center",}}>
+        <Hidden smDown>
      <TextField
+     className="editor_textfield"
       id="contact phone number"
-    //   label="Contact phone number"
       type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
       placeholder="0"
-      margin="normal"
-     
+      margin="normal"     
         />
-
+        </Hidden>
      </div>
 
         </div>
@@ -87,9 +89,10 @@ export const Editor = (props) => {
         />
       </div>
         <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
-        
+        <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
      <TextField
+     className="editor_textfield"
       id="contact phone number"
     //   label="Contact phone number"
       type="number"
@@ -101,7 +104,7 @@ export const Editor = (props) => {
         />
 
      </div>
-
+</Hidden>
         </div>
       </div>
       
@@ -115,9 +118,10 @@ export const Editor = (props) => {
             />
        </div>
          <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
-        
+         <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
      <TextField
+     className="editor_textfield"
       id="contact phone number"
     //   label="Contact phone number"
       type="number"
@@ -129,7 +133,7 @@ export const Editor = (props) => {
         />
 
      </div>
-
+</Hidden>
         </div>
       </div>
       {/* <div style={commonStyle}>

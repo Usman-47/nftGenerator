@@ -18,6 +18,8 @@ export const Items = (props) => {
         style={{
           height: `${props.imageHeight}px`,
           width: `${props.imageWidth}px`,
+          // width: `${file.width}`,
+          //           height: `${file.height }`,
           position: "relative",
         }}
         className="imageDimensions"
@@ -32,7 +34,7 @@ export const Items = (props) => {
                   zIndex: file.depth,
                 }}
                 onDragStop={(event) => {
-                  props.setCoord(event, file);
+                  // props.setCoord(event, file);
                 }}
               >
                 <img

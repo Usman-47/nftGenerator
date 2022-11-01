@@ -15,14 +15,16 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 1000,
+  width: '65%',
   height: 650,
   // bgcolor: "background.paper",
   // border: "2px solid #000",
   boxShadow: 24,
   borderRadius: "10px",
-  padding: "30px 70px 20px 20px",
+  padding: "30px 20px 20px 20px",
   // backgroundColor: "#525050d7",
+  overflowY:"auto",
+  overflowX:"hidden"
 };
 
 export const ModalComponent = (props) => {
@@ -108,7 +110,7 @@ export const ModalComponent = (props) => {
   return (
     <div>
       <Modal
-     style={{overflowY:"scroll"}}
+      className="carousel_modal_main_div"
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.isOpen}
@@ -120,21 +122,15 @@ export const ModalComponent = (props) => {
         }}
       >
         <Fade in={props.isOpen}>
-          <Box sx={style}>
+          <Box sx={style} className="carousel_box">
             {!next && (
+              <>
               <div
-                style={{
-                  // backgroundColor: "rgba(255, 255, 255, 0.336)",
-                  padding: "10px",
-                  borderRadius: "20px",
-                }}
-              >
-                <div
                   style={{
                     justifyContent: "center",
                     display: "flex",
                     fontWeight: "bold",
-                    fontSize: "20px",
+                    fontSize: "46px",
                     fontFamily: "Muller-ExtraBold",
                     marginBottom: "20px",
                     color: "white",
@@ -142,8 +138,23 @@ export const ModalComponent = (props) => {
                 >
                   REVIEW
                 </div>
+                <div
+                style={{
+                 
+                  height: '80vh',
+                  // backgroundColor: "rgba(255, 255, 255, 0.336)",
+                  padding: "10px 10px 50px 10px",
+                  borderRadius: "20px",
+                }}
+              >
+               
                 <div className="review">
-                  <div>
+                  <div style={{width:"100%", padding:"20px"}}>
+
+                  <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
+
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -151,9 +162,8 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       NFT Project name :
@@ -161,7 +171,7 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
-                      inputProps={{ style: { textAlign: "center" } }}
+                      // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="name"
                       onBlur={(event) => {
                         setName(event.target.value);
@@ -169,15 +179,19 @@ export const ModalComponent = (props) => {
                       style={{
                         justifyContent: "flex-start",
                         display: "flex",
-                        width: "500px",
+                        // width: "500px",
                         marginLeft: "10px",
-                        borderRadius: "10px",
-                        background:
-                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
-                        border: "1px solid #32306A",
+                       
+                       
                       }}
                     />
+                        </div>
+                   
+                        <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
 
+                    
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -185,9 +199,9 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
+                       
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       Symbol :
@@ -195,7 +209,7 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
-                      inputProps={{ style: { textAlign: "center" } }}
+                      // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="symbol"
                       onBlur={(event) => {
                         setSymbol(event.target.value);
@@ -203,12 +217,16 @@ export const ModalComponent = (props) => {
                       style={{
                         justifyContent: "flex-start",
                         display: "flex",
-                        width: "500px",
+                        // width: "500px",
                         marginLeft: "10px",
                         borderRadius: "10px",
                       }}
                     />
+                    </div>
 
+                    <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -216,9 +234,8 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       Seller Fee Basis Points :
@@ -226,7 +243,7 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
-                      inputProps={{ style: { textAlign: "center" } }}
+                      // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="Seller Fee"
                       onBlur={(event) => {
                         setSellerFee(event.target.value);
@@ -234,12 +251,16 @@ export const ModalComponent = (props) => {
                       style={{
                         justifyContent: "flex-start",
                         display: "flex",
-                        width: "500px",
+                        // width: "500px",
                         marginLeft: "10px",
                         borderRadius: "10px",
                       }}
                     />
+                    </div>
 
+                    <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px",}}>
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -247,9 +268,8 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       Creators :
@@ -259,7 +279,7 @@ export const ModalComponent = (props) => {
                         <TextField
                           size="medium"
                           variant="standard"
-                          inputProps={{ style: { textAlign: "center" } }}
+                          // inputProps={{ style: { textAlign: "center" } }}
                           placeholder="creator"
                           name="creator"
                           onBlur={(event) => {
@@ -268,7 +288,7 @@ export const ModalComponent = (props) => {
                           style={{
                             justifyContent: "flex-start",
                             display: "flex",
-                            width: "500px",
+                            // width: "500px",
                             marginLeft: "10px",
                             borderRadius: "10px",
                           }}
@@ -276,7 +296,7 @@ export const ModalComponent = (props) => {
                         <TextField
                           size="small"
                           variant="standard"
-                          inputProps={{ style: { textAlign: "center" } }}
+                          // inputProps={{ style: { textAlign: "center" } }}
                           placeholder="share"
                           name="share"
                           onBlur={(event) => {
@@ -285,15 +305,19 @@ export const ModalComponent = (props) => {
                           style={{
                             justifyContent: "flex-start",
                             display: "flex",
-                            width: "500px",
+                            // width: "500px",
                             marginLeft: "10px",
                             borderRadius: "10px",
                           }}
                         />
                       </>
                     ))}
-                    <button onClick={addFields}>Add More..</button>
+                    </div>
+                    <button style={{background:"rgba(39, 36, 52, 0.5)", borderRadius:"8px", color:"#CECECE", borderColor:"rgba(39, 36, 52, 0.5)", marginBottom:"10px"}} onClick={addFields}>Add More..</button>
 
+                    <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -301,9 +325,9 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
+                       
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       External Link (Website):
@@ -311,7 +335,7 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
-                      inputProps={{ style: { textAlign: "center" } }}
+                      // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="URL"
                       onBlur={(event) => {
                         setURL(event.target.value);
@@ -319,11 +343,16 @@ export const ModalComponent = (props) => {
                       style={{
                         justifyContent: "center",
                         display: "flex",
-                        width: "500px",
+                        // width: "500px",
                         marginLeft: "10px",
                         borderRadius: "10px",
                       }}
                     />
+                    </div>
+
+                    <div style={{ background:
+                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
                     <div
                       style={{
                         justifyContent: "flex-start",
@@ -331,9 +360,9 @@ export const ModalComponent = (props) => {
                         fontSize: "14px",
                         fontWeight: 500,
                         fontFamily: "poppins-light",
-                        marginTop: "30px",
+                      
                         color: "#CECECE",
-                        marginLeft: "1%",
+                        marginLeft: "3%",
                       }}
                     >
                       Description :
@@ -341,7 +370,7 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="small"
                       variant="outlined"
-                      inputProps={{ style: { textAlign: "center" } }}
+                      // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="description"
                       onBlur={(event) => {
                         setDescription(event.target.value);
@@ -355,6 +384,7 @@ export const ModalComponent = (props) => {
                         borderRadius: "10px",
                       }}
                     />
+                    </div>
                   </div>
                 </div>
                 <div
@@ -375,6 +405,8 @@ export const ModalComponent = (props) => {
                   </Button>
                 </div>
               </div>
+              </>
+              
             )}
 
             {next && (
@@ -388,7 +420,7 @@ export const ModalComponent = (props) => {
                   }}
                 >
                   <Button
-                  style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)'}}
+                  style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)', padding:"10px 44px", borderRadius:"0", fontFamily:"poppins-light"}}
                     variant="contained"
                     color="secondary"
                     size="large"

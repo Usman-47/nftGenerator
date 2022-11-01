@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "@material-ui/core/Slider";
 import { useState } from "react";
+import { Typography, TextField } from "@material-ui/core";
 import { ObjectContext, ObjectSelection } from "./EditingPage";
 import "./Slider.css";
 
@@ -59,14 +60,29 @@ export const SliderComponent = (props) => {
     });
   };
 
+
+
   return !props.marks ? (
-    <Slider
+   <>
+     <Slider
       value={currentSlide}
       valueLabelDisplay="auto"
       onChange={changeValue}
       min={0}
       max={1000}
     />
+     {/* <TextField
+     className="editor_textfield"
+      id="contact phone number"
+      type="number"
+      placeholder="0"
+      margin="normal" 
+      value={currentSlide}
+      onChange={(event, value)=>{
+        setCurrentSlide(event.target.value)
+      }}  
+        /> */}
+   </>
   ) : (
     <Slider
       aria-label="Temperature"

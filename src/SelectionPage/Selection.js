@@ -1,5 +1,6 @@
 import React from "react";
 import { NavComponent } from "../EditingPage/Navbar";
+import { NavHomePage } from "../ThreeDIntro.js/navigationBar";
 import { Button } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
 import "./style.css";
@@ -14,8 +15,13 @@ export const Selection = () => {
 
   return (
     <div>
-      <NavComponent style={{ zIndex: 2 }} />
+      
       <div className="area" >
+      <div style={{position: "relative" , zIndex: 5}}>
+      <NavHomePage  />
+      </div>
+      <div style={{ zIndex: 3 }}>
+      </div>
         <h1
           style={{
             fontFamily: "Muller-ExtraBold",
@@ -26,7 +32,7 @@ export const Selection = () => {
         >
           Upload Files
         </h1>
-        <div style={{display:"flex", justifyContent:"center", color:"white", gap:"10px", marginBottom:"20px"}}>
+        {/* <div style={{display:"flex", justifyContent:"center", color:"white", gap:"10px", marginBottom:"20px"}}>
           <div style={{display:"flex", alignItems:"center", gap:"10px"}}>
             <div style={{background:"#C615A9", width: '20px', height: '20px', display:"flex", justifyContent:"center", alignItems:"center"}}>
               <div style={{borderRadius:"50%", background:"white", width: '10px', height: '10px'}}>
@@ -43,7 +49,7 @@ export const Selection = () => {
             </div>
             <p style={{fontfamily:"Poppins", fontSize:"17px"}}>Shuffled</p>
           </div>
-        </div>
+        </div> */}
         <p style={{display:"flex", justifyContent:"center", color:"white", fontWeight: 800, fontSize: '18px', fontFamily:"Muller-Light", fontWeight: 800, textTransform:"uppercase"}}>Click below to upload files </p>
 
         <div
@@ -66,7 +72,7 @@ export const Selection = () => {
           <div style={{ position:"absolute", top:'50%', transform:"translateY(-40%)"}}>
           <div
             style={{
-              fontFamily: "monospace",
+              fontFamily: "poppins-light",
               fontSize: "17px",
               // display: "flex",
               justifyContent: "center",
@@ -96,7 +102,7 @@ export const Selection = () => {
            
             size="large"
             onClick={handleClick}
-            style={{ zIndex: 2,  background:"rgba(39, 36, 52, 0.7)", }}
+            style={{ zIndex: 2,  background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)", }}
           >
             Continue
           </Button>

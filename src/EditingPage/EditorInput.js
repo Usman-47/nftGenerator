@@ -11,10 +11,12 @@ export const EditorInput = (props) => {
 
   const commonStyle = {
     margin: "10px 5px 10px 5px",
-    background: "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
-    border:"1px solid #32306A",
-    padding: "10px 20px 0px 10px",
-    borderRadius: "12px",
+    // background: "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+    // border:"1px solid #32306A",
+    // padding: "10px 20px 0px 10px",
+    // borderRadius: "12px",
+    display:"flex",
+    justifyContent:"center",
     fontSize:"14px"
   };
 
@@ -39,6 +41,7 @@ export const EditorInput = (props) => {
       }}
     >
       <div
+      className="manual-input"
         style={{
           justifyContent: "center",
           display: "flex",
@@ -47,9 +50,9 @@ export const EditorInput = (props) => {
           fontFamily: "Muller-Light",
         }}
       >
-        Manual Input
+        TOTAL COPIES
       </div>
-      <div style={commonStyle}>
+      {/* <div style={commonStyle}>
         <div style={{ fontWeight: "bolder", fontFamily: "monospace" }}>
           Height:
         </div>
@@ -84,26 +87,28 @@ export const EditorInput = (props) => {
           }}
           onBlur={handleFinalClick}
         />
-      </div>
+      </div> */}
 
       <div style={commonStyle}>
-        <div style={{ fontWeight: "bold", fontFamily: "monospace" }}>
+        {/* <div style={{ fontWeight: "bold", fontFamily: "monospace" }}>
           Total Copies:
-        </div>
+        </div> */}
 
         <TextField
           size="small"
-          defaultValue={100}
-          inputProps={{ min: 0, style: { textAlign: "center", color:"#F5F5F5" } }}
+          defaultValue={0}
+          inputProps={{ min: 0, style: { color:"#F5F5F5", background:"rgba(0, 0, 0, 0.25)", padding:"10px 15px 10px 30px" } }}
           margin="dense"
           variant="outlined"
           onChange={(event) => {
+          
             setInput4({ value: JSON.parse(event.target.value) });
           }}
           error={input4.value > 10000}
           helperText={input4 > 10000 ? "Should be less than 10000" : ""}
           onBlur={handleFinalClick}
         />
+        
       </div>
       <div style={{ justifyContent: "center", display: "flex" }}>
         <Button style={{ backgroundColor: "transparent",

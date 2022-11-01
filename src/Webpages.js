@@ -15,12 +15,14 @@ import { ThreeData } from "./ThreeDIntro.js/page";
 import "./EditingPage/styles.css";
 import { Selection } from "./SelectionPage/Selection";
 import Navb from "./EditingPage/Navbar/index";
+
+
+
 export const Webpages = () => {
   return (
    <>
    
      <Router>
-     {/* <Navb/> */}
       <Routes>
         <Route exact path="/" element={<ThreeData />} />
         <Route path="/selection" element={<Selection />} />

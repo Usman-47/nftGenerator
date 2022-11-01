@@ -28,14 +28,14 @@ export const DemoCarousel = () => {
   };
 
   return (
-    <div style={{color:"white"}}>
-      <div
+    <div style={{color:"white",  marginBottom:"50px",}}>
+      {/* <div
         style={{
           justifyContent: "center",
           display: "flex",
           fontWeight: "bold",
-          fontSize: "20px",
-          fontFamily: "Times New Roman, serif",
+          fontSize: "25px",
+          fontFamily: "Muller-ExtraBold",
         }}
       >
         REVIEW
@@ -46,32 +46,33 @@ export const DemoCarousel = () => {
           display: "flex",
           fontSize: "20px",
           fontWeight: 500,
-          fontFamily: "Times New Roman, serif",
+          fontFamily: "poppins-light",
         }}
       >
         Total Copies Generated Will Be :
-      </div>
+      </div> */}
       <div
         style={{
           justifyContent: "center",
           display: "flex",
           fontSize: "25px",
           fontWeight: 500,
-          fontFamily: "Times New Roman, serif",
+          
           animation: "glow 2s ease-in-out infinite alternate",
           color: "rgba(255, 255, 255, 0.904)",
         }}
       >
-        <h1>{`${total.value}`}</h1>
+        <h1 style={{fontFamily: "Muller-ExtraBold", fontSize: "70px"}}>{`${total.value}`}</h1>
       </div>
 
-      <Carousel responsive={responsive} focusOnSelect={true}>
+      <Carousel responsive={responsive} focusOnSelect={true} >
         {objects &&
           objects.map((object) => {
             return (
               <div className="carouselElement">
                 <div>
                   <img
+                  width="100%"
                     // src={require(`.${object.path
                     //   .slice(12)
                     //   .replaceAll("\\", "/")}`)}
@@ -82,14 +83,29 @@ export const DemoCarousel = () => {
                     )}`}
                   />
                 </div>
-                <div style={{ fontWeight: "bold" }}>{`${object.name
+                <div style={{ fontWeight: "bold", borderBottom:"1px solid #3c4174", padding:"10px", }}>{`${object.name
                   .slice(0, 1)
                   .toUpperCase()}${object.name.slice(1)} : `}</div>
-                <div>{`Height - ${object.height} `}</div>
-                <div>{`Width - ${object.width} `}</div>
-                <div>{`Depth - ${object.depth} `}</div>
-                <div>{`X - ${object.x}`}</div>
-                <div>{`Y - ${object.y}`}</div>
+                <div style={{borderBottom:"1px solid #3c4174", padding:"10px", display:"flex", justifyContent:"space-between"}}> 
+                <p>Height:</p>
+                <p>{object.height}</p> 
+                </div>
+                <div style={{borderBottom:"1px solid #3c4174", padding:"10px", display:"flex", justifyContent:"space-between"}}>
+                <p>Width:</p>
+                  <p>{object.width}</p>
+                </div>
+                <div style={{borderBottom:"1px solid #3c4174", padding:"10px", display:"flex", justifyContent:"space-between"}}>
+                  <p>Depth:</p>
+                  <p>{object.depth}</p>
+                </div>
+                <div style={{borderBottom:"1px solid #3c4174", padding:"10px", display:"flex", justifyContent:"space-between"}}>
+                  <p>X:</p>
+                  <p>{object.x}</p>
+                </div>
+                <div style={{borderBottom:"1px solid #3c4174", padding:"10px", display:"flex", justifyContent:"space-between"}}>
+                <p>Y:</p>
+                <p>{object.y}</p>
+                </div>
               </div>
             );
           })}

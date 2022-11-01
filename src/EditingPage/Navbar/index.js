@@ -54,7 +54,7 @@ const Navb = () => {
             </NavDropdown.Item>
             <NavDropdown.Item href="#">Something</NavDropdown.Item>
           </NavDropdown> 
-          <WalletMultiButton/> 
+          {/* <WalletMultiButton/>  */}
         </Nav>
       </Navbar.Collapse>
     </Container>
