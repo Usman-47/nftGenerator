@@ -4,15 +4,19 @@ import { Editor } from "./Editor";
 import { Items } from "./Items";
 import { NumberOfCopies, ObjectContext, ObjectSelection } from "./EditingPage";
 import { Typography, TextField } from "@material-ui/core";
+import Hidden from '@material-ui/core/Hidden';
 import { EditorInput } from "./EditorInput";
 import TreesTemp from "./FolderStructure";
 import { Button } from "@material-ui/core";
+import InputBase from '@material-ui/core/InputBase';
 import "./Page.css";
 import { ModalComponent } from "./Modal";
 import { LoadingModalComponent } from "./loadingModal";
 import axios from "axios";
 import { RarityModalComponent } from "./RarityModal";
 import TotalCopies from "./totalCopies";
+
+
 
 export const Page = (props) => {
   const { objects, dispatch1 } = React.useContext(ObjectContext);
@@ -190,28 +194,20 @@ export const Page = (props) => {
               max={1000}
               />
      </div>
-     {/* <input
-            className="input_field"
-
-              onChange={(event) => {
-                setCanvasHeight({
-                  value: JSON.parse(event.target.value),
-                });
-              }}
-            /> */}
-            <TextField
-     className="editor_textfield mid_textFields"
-      id="contact phone number"
-      type="number"
+     <Hidden smDown>
+     <InputBase
+        className="editor_textfield mid_textFields"
+        type="number"
       placeholder="0"
-      margin="normal" 
-      // value={currentSlide}
-      onChange={(event) => {
+        inputProps={{ 'aria-label': 'naked' }}
+        onChange={(event) => {
                 setCanvasHeight({
                   value: JSON.parse(event.target.value),
                 });
               }}
-        />
+        
+      />
+      </Hidden>
           
             
           </div>
@@ -240,20 +236,22 @@ export const Page = (props) => {
                 });
               }}
             /> */}
-
-<TextField
-     className="editor_textfield mid_textFields"
-      id="contact phone number"
-      type="number"
-      placeholder="0"
-      margin="normal" 
-      // value={currentSlide}
-      onChange={(event) => {
+            <Hidden smDown>
+            <InputBase
+              className="editor_textfield mid_textFields"
+              type="number"
+              placeholder="0"
+              inputProps={{ 'aria-label': 'naked' }}
+              onChange={(event) => {
                 setCanvasWidth({
                   value: JSON.parse(event.target.value),
                 });
               }}
-        />
+        
+      />
+      </Hidden>
+
+
         
             
                 {/* <div style={{maxWidth:"200px", margin:"0 auto"}}>

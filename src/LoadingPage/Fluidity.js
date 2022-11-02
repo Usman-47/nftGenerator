@@ -14,6 +14,7 @@ export const Fluidity = () => {
   const [finalModal, setFinalModal] = React.useState(false);
 
   const handleClickGenerate = async () => {
+    console.log("kuch b");
     const baseURL = `${process.env.REACT_APP_SERVERURL}/compress`;
     setLoading(true);
     const response = await axios
@@ -126,7 +127,7 @@ export const Fluidity = () => {
           variant="contained"
           color="secondary"
           size="large"
-          // onClick={handleClickGenerate}
+          onClick={handleClickGenerate}
           disabled={loading}
         >
           Generate Link

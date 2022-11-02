@@ -17,6 +17,7 @@ export function MyDropzone() {
     const uuid = JSON.parse(sessionStorage.uuid);
     acceptedFiles &&
       acceptedFiles.forEach((file) => {
+        
         let path = file.path.split("/")[1];
         formData.append(`${uuid}/${path}`, file);
 

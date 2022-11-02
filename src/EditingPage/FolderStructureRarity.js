@@ -27,7 +27,7 @@ export default function TreesTempRarity(props) {
           display: "flex",
           fontWeight: "bold",
           fontSize: "20px",
-          fontFamily: "monospace",
+          fontFamily: "poppins-light",
           color: "#fff",
         }}
       >

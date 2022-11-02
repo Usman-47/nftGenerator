@@ -71,17 +71,6 @@ export const SliderComponent = (props) => {
       min={0}
       max={1000}
     />
-     {/* <TextField
-     className="editor_textfield"
-      id="contact phone number"
-      type="number"
-      placeholder="0"
-      margin="normal" 
-      value={currentSlide}
-      onChange={(event, value)=>{
-        setCurrentSlide(event.target.value)
-      }}  
-        /> */}
    </>
   ) : (
     <Slider

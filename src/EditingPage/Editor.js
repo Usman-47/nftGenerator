@@ -3,6 +3,7 @@ import Hidden from '@material-ui/core/Hidden';
 import { SliderComponent } from "./Slider";
 import { ObjectContext, ObjectSelection } from "./EditingPage";
 import { Typography, TextField } from "@material-ui/core";
+import InputBase from '@material-ui/core/InputBase';
 export const Editor = (props) => {
   const { objects, dispatch1 } = React.useContext(ObjectContext);
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
@@ -68,13 +69,18 @@ export const Editor = (props) => {
         
         <div style={{display:"flex", justifyContent:"center",}}>
         <Hidden smDown>
-     <TextField
-     className="editor_textfield"
-      id="contact phone number"
-      type="number"
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"     
-        />
+        inputProps={{ 'aria-label': 'naked' }}
+        // onChange={(event) => {
+        //         setCanvasHeight({
+        //           value: JSON.parse(event.target.value),
+        //         });
+        //       }}
+        
+      />
         </Hidden>
      </div>
 
@@ -91,17 +97,12 @@ export const Editor = (props) => {
         <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
         <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
-     <TextField
-     className="editor_textfield"
-      id="contact phone number"
-    //   label="Contact phone number"
-      type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"
-     
-        />
+        inputProps={{ 'aria-label': 'naked' }}
+      />
 
      </div>
 </Hidden>
@@ -120,17 +121,12 @@ export const Editor = (props) => {
          <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
          <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
-     <TextField
-     className="editor_textfield"
-      id="contact phone number"
-    //   label="Contact phone number"
-      type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"
-     
-        />
+        inputProps={{ 'aria-label': 'naked' }}
+      />
 
      </div>
 </Hidden>

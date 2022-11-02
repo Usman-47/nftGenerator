@@ -12,12 +12,12 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 1000,
   height: 650,
-  bgcolor: "background.paper",
+  // bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   borderRadius: "10px",
   p: 4,
-  backgroundColor: "#525050d7",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
 };
 
 export const RarityModalComponent = (props) => {
@@ -53,6 +53,7 @@ export const RarityModalComponent = (props) => {
               }}
             >
               <Button
+              style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
                 variant="contained"
                 color="secondary"
                 size="large"

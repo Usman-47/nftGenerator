@@ -3,7 +3,7 @@ import { SliderComponent } from "./Slider";
 import { TextField } from "@material-ui/core";
 import { NumberOfCopies, ObjectContext, ObjectSelection } from "./EditingPage";
 import { Button, Input } from "@material-ui/core";
-
+import InputBase from '@material-ui/core/InputBase';
 export const EditorInput = (props) => {
   // eslint-disable-next-line no-undef
   const { objects, dispatch1 } = React.useContext(ObjectContext);
@@ -93,11 +93,23 @@ export const EditorInput = (props) => {
         {/* <div style={{ fontWeight: "bold", fontFamily: "monospace" }}>
           Total Copies:
         </div> */}
-
-        <TextField
+        <InputBase
+        className="editor_textfield"
+        type="number"
+      placeholder="0"
+        inputProps={{ 'aria-label': 'naked' }}
+        onChange={(event) => {
+          
+          setInput4({ value: JSON.parse(event.target.value) });
+        }}
+        error={input4.value > 10000}
+        helperText={input4 > 10000 ? "Should be less than 10000" : ""}
+        onBlur={handleFinalClick}
+      />
+        {/* <TextField
           size="small"
           defaultValue={0}
-          inputProps={{ min: 0, style: { color:"#F5F5F5", background:"rgba(0, 0, 0, 0.25)", padding:"10px 15px 10px 30px" } }}
+          inputProps={{ min: 0, style: { color:"#F5F5F5", background:"rgba(0, 0, 0, 0.25)", } }}
           margin="dense"
           variant="outlined"
           onChange={(event) => {
@@ -107,7 +119,7 @@ export const EditorInput = (props) => {
           error={input4.value > 10000}
           helperText={input4 > 10000 ? "Should be less than 10000" : ""}
           onBlur={handleFinalClick}
-        />
+        /> */}
         
       </div>
       <div style={{ justifyContent: "center", display: "flex" }}>

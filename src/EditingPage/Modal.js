@@ -58,12 +58,14 @@ export const ModalComponent = (props) => {
       description: description,
       URL: URL,
     };
+    console.log(data, "dataaaaaa");
     props.openLoadingModal();
     axios
       .post(`${process.env.REACT_APP_SERVERURL}/submitDetails`, data)
       .then(function (response) {
         window.location.href = "/loading";
         console.log(response);
+     
       })
       .catch(function (error) {
         alert(error);
@@ -78,6 +80,7 @@ export const ModalComponent = (props) => {
       totalCopies: total,
       name: name,
     };
+  
     // const response = await axios
     //   .post("https://sickalien.store/validate", data)
     //   .then(function (res) {
@@ -428,6 +431,7 @@ export const ModalComponent = (props) => {
                   >
                     Create
                   </Button>
+                  <a href="/file.txt">download</a>
                 </div>
               </div>
             )}

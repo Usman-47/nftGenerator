@@ -60,6 +60,7 @@ export const FinalModalComponent = (props) => {
             >
               Hey Guys,
             </div>
+            <a href={`${process.env.REACT_APP_SERVERURL/JSON.parse(sessionStorage.uuid)}`}>download</a>
             <div
               style={{
                 display: "flex",
