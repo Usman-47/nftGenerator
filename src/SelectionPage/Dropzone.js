@@ -42,7 +42,11 @@ export function MyDropzone() {
         },
       })
       .then(function (response) {
-        toast.success("upload success");
+        toast.success('uploaded successfully !', {
+          position: toast.POSITION.TOP_RIGHT
+      });
+      
+  
       })
       .catch(function (error) {
         toast.info(error);
@@ -58,7 +62,25 @@ export function MyDropzone() {
   });
 
   return (
-    <div style={{ zIndex: 2 }}>
+    <>
+       <div className="form-group" >
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            progressClassName="toastProgress"
+            bodyClassName="toastBody"
+          />
+        </div>
+
+        <div style={{ zIndex: 2 }}>
+    
       <div style={{ zIndex: 2 }} {...getRootProps()}>
         <input
           style={{ zIndex: 2 }}
@@ -87,19 +109,7 @@ export function MyDropzone() {
           </IconButton>
         )}
 
-        <div className="form-group">
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={true}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-        </div>
+       
       </div>
       <div
         style={{
@@ -111,5 +121,7 @@ export function MyDropzone() {
         <CircularProgress variant="determinate" value={loaded} />
       </div>
     </div>
+    </>
+    
   );
 }

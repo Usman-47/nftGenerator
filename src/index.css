@@ -12,6 +12,19 @@
     font-family: "poppins-light";
     src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
   }
+  .Toastify__toast--success {
+    border: 1px solid #44327E !important;
+    border-radius: 50px !important;
+    background: #F0F9FA !important;
+  }
+  .toastBody {
+    font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+    /* color: #10171D;  */
+    font-size: 0.875rem !important;
+  }
+  .toastProgress {
+    background: #44327E !important;
+  }
 
 .upload-file-main-div{
     background-image: url('./assets/images/Vector\ 11.png');
@@ -21,7 +34,6 @@
    
 }
 .editor_textfield{
-  
   background: rgba(0, 0, 0, 0.25) !important;
   border-radius: 8px !important;
   padding-top: 5px !important;
