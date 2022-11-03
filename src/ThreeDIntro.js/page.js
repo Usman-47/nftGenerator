@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavHomePage } from "./navigationBar";
+import Navb from "../EditingPage/Navbar/index";
 import "./style.css";
 import data from "../traffic.json";
 import { AboutModalComponent } from "./AboutModal";
@@ -35,10 +36,11 @@ export const ThreeData = () => {
     <div className="landing-page-main-div">
       <div>
         <div style={{ zIndex: 3 }}>
+        {/* <Navb/> */}
           <NavHomePage
-            setAboutOpen={setAboutOpen}
-            setContactOpen={setContactOpen}
-            setInstructionsOpen={setInstructionsOpen}
+            // setAboutOpen={setAboutOpen}
+            // setContactOpen={setContactOpen}
+            // setInstructionsOpen={setInstructionsOpen}
           />
         </div>
 
@@ -92,7 +94,7 @@ export const ThreeData = () => {
           <h3
             style={{
               zIndex: 3,
-              fontFamily: "monospace",
+              fontFamily: "poppins-light",
               fontSize: "30px",
             }}
           >
@@ -102,7 +104,7 @@ export const ThreeData = () => {
 
         <button
           className="nice"
-          style={{ zIndex: 3, fontFamily: "monospace" }}
+          style={{ zIndex: 3, fontFamily: "poppins-light" }}
           onClick={handleClick}
         >
           Enter
@@ -115,7 +117,7 @@ export const ThreeData = () => {
             position:"absolute",
             bottom:"5%",
               zIndex: 3,
-              fontFamily: "monospace",
+              fontFamily: "poppins-light",
               fontWeight: "400",
               animation: "glow 2s ease-in-out infinite alternate",
             }}

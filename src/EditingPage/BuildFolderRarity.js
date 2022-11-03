@@ -25,7 +25,7 @@ export const FoldersRarity = (props) => {
             <ListItem key={index1} button component="a" href="#">
               <Typography
                 className="rarityFolder"
-                style={{ fontFamily: "monospace", fontWeight: "bold" }}
+                style={{ fontFamily: "poppins-light", fontWeight: "bold" }}
               >
                 {folder.name.slice(0, 1).toUpperCase() + folder.name.slice(1)}
               </Typography>
@@ -47,7 +47,7 @@ export const FoldersRarity = (props) => {
                   <Typography
                     className="elementSubfolder"
                     style={{
-                      fontFamily: "monospace",
+                      fontFamily: "poppins-light",
                       maxWidth: "30%",
                     }}
                   >
@@ -55,7 +55,7 @@ export const FoldersRarity = (props) => {
                   </Typography>
                   <Typography
                     style={{
-                      fontFamily: "monospace",
+                      fontFamily: "poppins-light",
                       maxWidth: "10%",
                       marginLeft: "3%",
                       color: "rgb(172, 172, 172)",

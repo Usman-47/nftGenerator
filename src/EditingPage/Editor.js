@@ -1,7 +1,9 @@
 import React from "react";
+import Hidden from '@material-ui/core/Hidden';
 import { SliderComponent } from "./Slider";
 import { ObjectContext, ObjectSelection } from "./EditingPage";
 import { Typography, TextField } from "@material-ui/core";
+import InputBase from '@material-ui/core/InputBase';
 export const Editor = (props) => {
   const { objects, dispatch1 } = React.useContext(ObjectContext);
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
@@ -23,7 +25,9 @@ export const Editor = (props) => {
 
   const currentValues = React.useRef(
     props.currentValues.find((obj) => obj.name === selection.name)
+   
   );
+  console.log(props, 'currentvalues props');
 
   React.useEffect(() => {
     currentValues.current =
@@ -41,6 +45,7 @@ export const Editor = (props) => {
       }}
     >
       <div
+      className="editor"
         style={{
           justifyContent: "center",
           display: "flex",
@@ -63,17 +68,20 @@ export const Editor = (props) => {
         <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
         
         <div style={{display:"flex", justifyContent:"center",}}>
-     <TextField
-      id="contact phone number"
-    //   label="Contact phone number"
-      type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
+        <Hidden smDown>
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"
-     
-        />
-
+        inputProps={{ 'aria-label': 'naked' }}
+        // onChange={(event) => {
+        //         setCanvasHeight({
+        //           value: JSON.parse(event.target.value),
+        //         });
+        //       }}
+        
+      />
+        </Hidden>
      </div>
 
         </div>
@@ -87,21 +95,17 @@ export const Editor = (props) => {
         />
       </div>
         <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
-        
+        <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
-     <TextField
-      id="contact phone number"
-    //   label="Contact phone number"
-      type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"
-     
-        />
+        inputProps={{ 'aria-label': 'naked' }}
+      />
 
      </div>
-
+</Hidden>
         </div>
       </div>
       
@@ -115,21 +119,17 @@ export const Editor = (props) => {
             />
        </div>
          <div style={{display:"flex", alignItems:"center" , width:"20%",}}>
-        
+         <Hidden smDown>
         <div style={{display:"flex", justifyContent:"center",}}>
-     <TextField
-      id="contact phone number"
-    //   label="Contact phone number"
-      type="number"
-    //   value={this.state.contactPhoneNumber}
-    //   onChange={this.handleChange('contactPhoneNumber')}
+        <InputBase
+        className="editor_textfield"
+        type="number"
       placeholder="0"
-      margin="normal"
-     
-        />
+        inputProps={{ 'aria-label': 'naked' }}
+      />
 
      </div>
-
+</Hidden>
         </div>
       </div>
       {/* <div style={commonStyle}>

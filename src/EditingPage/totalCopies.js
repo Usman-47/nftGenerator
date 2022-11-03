@@ -4,8 +4,9 @@ const TotalCopies = () => {
   return (
     <div>
      <p style={{color:"white", fontSiz:"24px", fontFamily:"Muller-ExtraBold", textAlign:"center"}}>TOTAL COPIES</p>
-     <div style={{display:"flex", justifyContent:"center",}}>
+     <div style={{display:"flex", justifyContent:"center", border: '1px solid #32306A !important'}}>
      <TextField
+     className="editor_textfield"
       id="contact phone number"
     //   label="Contact phone number"
       type="number"
