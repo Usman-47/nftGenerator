@@ -210,7 +210,7 @@ app.post("/submitDetails", (request, response) => {
 
       let pathArray = obj.path.split("\\");
       let traitType = pathArray[pathArray.length - 2];
-      attributesArray.push({ traitType, value: obj.name.slice(".png", "") });
+      attributesArray.push({ traitType, value: obj.name.replace(".png", "") });
       if (attributesArray.length === tree.children.length) {
         newData.push([...attributesArray]);
       }
@@ -259,17 +259,17 @@ app.post("/submitDetails", (request, response) => {
         let num = hash - 1;
         const dataImage = {
           name: `${name} #${hash}`,
-          // symbol,
-          // seller_fee_basis_points,
+          symbol,
+          seller_fee_basis_points,
           description: description,
-          // external_link: URL,
+          external_link: URL,
           attributes: newData[num],
-          // property: {
-          //   creators: creators,
-          // },
-          // traits: {
-          //   rarity: rarityPercentage,
-          // },
+          property: {
+            creators: creators,
+          },
+          traits: {
+            rarity: rarityPercentage,
+          },
         };
 
         metadata.push(dataImage);
