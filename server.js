@@ -333,7 +333,7 @@ app.get("/resolveFiles", function (req, res, next) {
   return res.status(200).json("Success");
 });
 app.use("/", express.static(path.join(__dirname, "src/EditingPage/")));
-app.use("/", express.static(path.join(__dirname, "generated")));
+app.use("/", express.static(path.join(__dirname, "generated/")));
 app.use(express.static("./build"));
 app.all("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "build", "index.html"));

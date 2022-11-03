@@ -9,18 +9,17 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: '60%',
+  width: "60%",
   height: 650,
   // bgcolor: "background.paper",
   // border: "2px solid #000",
   // boxShadow: 24,
   // borderRadius: "10px",
   p: 4,
-  
-  backgroundColor: '#4E39D7',
-boxshadow: 'inset -24px -24px 30px rgba(0, 0, 0, 0.25) !important',
-borderRadius: '40px',
 
+  backgroundColor: "#4E39D7",
+  boxshadow: "inset -24px -24px 30px rgba(0, 0, 0, 0.25) !important",
+  borderRadius: "40px",
 };
 
 export const FinalModalComponent = (props) => {
@@ -47,7 +46,10 @@ export const FinalModalComponent = (props) => {
                 color: "#fff",
               }}
             >
-              <h3 style={{fontFamily:"poppins-light"}}> 🎉🎉 Woohoooo !! Check Generated Folder...</h3>
+              <h3 style={{ fontFamily: "poppins-light" }}>
+                {" "}
+                🎉🎉 Woohoooo !! Check Generated Folder...
+              </h3>
             </div>
             <div
               style={{
@@ -60,7 +62,14 @@ export const FinalModalComponent = (props) => {
             >
               Hey Guys,
             </div>
-            <a href={`${process.env.REACT_APP_SERVERURL/JSON.parse(sessionStorage.uuid)}`}>download</a>
+            <a
+              href={`${process.env.REACT_APP_SERVERURL}/${JSON.parse(
+                sessionStorage.uuid
+              )}.zip`}
+              target="_blank"
+            >
+              download
+            </a>
             <div
               style={{
                 display: "flex",
@@ -89,7 +98,7 @@ export const FinalModalComponent = (props) => {
             </div>
 
             <div
-            className="links-div"
+              className="links-div"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -98,10 +107,9 @@ export const FinalModalComponent = (props) => {
                 backgroundColor: "rgba(39, 36, 52, 0.5)",
                 padding: "10px",
                 borderRadius: "10px",
-                
               }}
             >
-              <ol style={{width:"100%"}}>
+              <ol style={{ width: "100%" }}>
                 <p
                   style={{
                     display: "flex",
