@@ -57,7 +57,7 @@ export const Editor = (props) => {
         Editor
       </div>
 
-      <div style={commonStyle}>
+      {/* <div style={commonStyle}>
         <div style={{width:"75%", marginTop:"15px"}}>
         Height:
         <SliderComponent
@@ -107,7 +107,7 @@ export const Editor = (props) => {
      </div>
 </Hidden>
         </div>
-      </div>
+      </div> */}
       
       <div style={commonStyle}>
        <div style={{width:"75%", marginTop:"15px"}}>

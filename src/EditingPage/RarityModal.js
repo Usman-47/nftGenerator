@@ -4,20 +4,21 @@ import { Box } from "@material-ui/core";
 import { Modal } from "@material-ui/core";
 import { Fade, Button } from "@material-ui/core";
 import TreesTempRarity from "./FolderStructureRarity";
-
+import CloseIcon from '@material-ui/icons/Close';
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 1000,
-  height: 650,
+  width: '90%',
+  height: '90vh',
   // bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "2px solid #272434",
   boxShadow: 24,
   borderRadius: "10px",
-  p: 4,
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  
+  backgroundColor: "#44327E",
+  padding:" 10px 10px 60px 10px"
 };
 
 export const RarityModalComponent = (props) => {
@@ -36,11 +37,28 @@ export const RarityModalComponent = (props) => {
       >
         <Fade in={props.isOpen}>
           <Box sx={style}>
+          
+          <div style={{textAlign:"end"}}>
+          <CloseIcon className="close_icon" style={{color:"white"}} onClick={()=>{props.handleClose()}}/>
+          </div>
+          <div
+        style={{
+          justifyContent: "center",
+          display: "flex",
+          fontWeight: "bold",
+          fontSize: "20px",
+          fontFamily: "poppins-light",
+          color: "#fff",
+        }}
+      >
+        Rarity Control
+      </div>
             <div
               style={{
                 overflowX: "hidden",
                 overflowY: "auto",
                 maxHeight: "550px",
+                padding:"0 20px 0 20px"
               }}
             >
               <TreesTempRarity folderData={props.folderStructure} />

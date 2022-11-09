@@ -47,7 +47,7 @@ export const LoadingModalComponent = (props) => {
                 color: "#fff",
               }}
             >
-              <h2 style={{fontFamily:"Muller-Light"}}>Files are being processed...</h2>
+              <h2 style={{fontFamily:"Muller-Light"}}>NFTs are generating...</h2>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div class="spinner-box">

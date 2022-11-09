@@ -21,18 +21,7 @@ export default function TreesTempRarity(props) {
 
   return (
     <div className={classes.root} style={{ marginTop: "20px" }}>
-      <div
-        style={{
-          justifyContent: "center",
-          display: "flex",
-          fontWeight: "bold",
-          fontSize: "20px",
-          fontFamily: "poppins-light",
-          color: "#fff",
-        }}
-      >
-        Rarity Control
-      </div>
+     
       <List>
         <TreeView
           aria-label="file system navigator"

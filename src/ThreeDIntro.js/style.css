@@ -1,5 +1,5 @@
 html,body {
-    height: 100%;
+    /* height: 100%; */
     color: radial-gradient(#161c24 0%, #021025 100%);
     /* overflow: hidden; */
   }
@@ -49,18 +49,18 @@ html,body {
 
   .nice{
     background: linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%);
-    position: absolute;
+    /* position: absolute; */
     /* background: transparent; */
     color: white;
     width: 250px;
-    height: 50px;
+    /* height: 50px; */
     font-size: 2em;
     border-radius: 5px;
-    top: 30vh;
-    bottom: 0px;
+    /* top: 30vh; */
+    /* bottom: 10px;
     left: 0px;
-    right: 0px;
-    margin: auto;
+    right: 0px; */
+    /* margin: auto; */
     transition: .3s;
     animation: glow 2s ease-in-out infinite alternate;
     border: unset !important;

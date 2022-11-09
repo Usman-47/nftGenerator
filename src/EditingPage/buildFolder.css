@@ -38,9 +38,12 @@
   color: #f1f1f1;
   padding-left: 31px;
   color: #ffffff;
-  background-color: #d4d4d496;
+  background: rgba(0, 0, 0, 0.2);
 }
-
+.close_icon:hover{
+  cursor: pointer;
+  color: #C615A9 !important;
+}
 .rarityText {
   color: #fff;
   margin: 10px;

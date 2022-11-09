@@ -11,7 +11,7 @@ import { useTheme } from "@material-ui/core/styles";
 import { TreeView } from "@material-ui/lab";
 import TreeItem from "@material-ui/lab/TreeItem";
 import { Folders } from "./BuildFolder";
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo2.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,9 +26,11 @@ export default function TreesTemp(props) {
 
   return (
     <div className={classes.root}>
-    <NavLink to="/">
-    <img width="80%" src={logo} alt="" style={{ marginBottom: "10px" }}/>
-    </NavLink>
+     <NavLink to="/">
+       <div className='logo_div2'>
+        <img width="160px" src={logo} alt="" />
+        </div>
+        </NavLink>
     <div style={{ padding: "10px"}}>
     <div
     className="folder-strucrure"
@@ -50,7 +52,7 @@ export default function TreesTemp(props) {
           aria-label="file system navigator"
           defaultCollapseIcon={<IconButton />}
           defaultExpandIcon={<MenuIcon />}
-          sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: "auto", background:"red" }}
+          sx={{ height: 240, flexGrow: 1, maxWidth: 400, }}
         >
           <Folders children={treeData && treeData.children} />
         </TreeView>

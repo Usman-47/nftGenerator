@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavHomePage } from "./navigationBar";
-import Navb from "../EditingPage/Navbar/index";
+import Footer from "../EditingPage/footer";
 import "./style.css";
 import data from "../traffic.json";
 import { AboutModalComponent } from "./AboutModal";
@@ -30,12 +30,13 @@ export const ThreeData = () => {
 
     axios.post(`${process.env.REACT_APP_SERVERURL}/saveID`, ID);
 
-    window.location.href = "/selection";
+    window.location.href = "/Uploading";
   };
   return (
-    <div className="landing-page-main-div">
-      <div>
-        <div style={{ zIndex: 3 }}>
+    <>
+       <div className="landing-page-main-div">
+      {/* <div style={{background:"red"}}> */}
+        <div>
         {/* <Navb/> */}
           <NavHomePage
             // setAboutOpen={setAboutOpen}
@@ -85,12 +86,12 @@ export const ThreeData = () => {
             }}
           >
             {/* <span aria-hidden="true">Sick Alien</span> */}
-            Ragin Roosters
+            whatsforlaunch
             {/* <span aria-hidden="true">Sick Alien</span> */}
           </p>
         </div>
 
-        <div className="title" style={{ zIndex: 3, fontFamily: "monospace" }}>
+        <div className="title" style={{ zIndex: 3, }}>
           <h3
             style={{
               zIndex: 3,
@@ -102,29 +103,35 @@ export const ThreeData = () => {
           </h3>
         </div>
 
-        <button
+       <div style={{display:"flex", justifyContent:"center", marginBottom:"60px"}}>
+       <button
           className="nice"
           style={{ zIndex: 3, fontFamily: "poppins-light" }}
           onClick={handleClick}
         >
           Enter
         </button>
+       </div>
         <div style={{ zIndex: 3, display: "flex", justifyContent: "center" }}>
           <p
             className="homepageContent"
             style={{
               
-            position:"absolute",
-            bottom:"5%",
+            // position:"absolute",
+            // bottom:"5%",
               zIndex: 3,
               fontFamily: "poppins-light",
               fontWeight: "400",
               animation: "glow 2s ease-in-out infinite alternate",
             }}
           >
-            A tool to take the pain of creating NFTs away from you.
+             Generating art just got a whole lot easier
           </p>
         </div>
+        <div style={{position:"fixed",  width: '100%', bottom:"0"}}>
+        <Footer/>
+        </div>
+      
         {/* <img
           src={require("./Alien.png")}
           alt="AlienImage"
@@ -149,7 +156,11 @@ export const ThreeData = () => {
             handleClose={handleCloseInstructions}
           />
         </div>
-      </div>
+      {/* </div> */}
+     
     </div>
+    
+      </>
+   
   );
 };

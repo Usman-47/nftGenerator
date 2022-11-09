@@ -3,30 +3,38 @@ import { Backdrop } from "@material-ui/core";
 import { Box } from "@material-ui/core";
 import { Modal } from "@material-ui/core";
 import { Fade, CircularProgress } from "@material-ui/core";
-
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
+import { useNavigate } from "react-router-dom";
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: '60%',
+  width: "60%",
   height: 650,
   // bgcolor: "background.paper",
   // border: "2px solid #000",
   // boxShadow: 24,
   // borderRadius: "10px",
   p: 4,
-  
-  backgroundColor: '#4E39D7',
-boxshadow: 'inset -24px -24px 30px rgba(0, 0, 0, 0.25) !important',
-borderRadius: '40px',
 
+  backgroundColor: "#4E39D7",
+  boxshadow: "inset -24px -24px 30px rgba(0, 0, 0, 0.25) !important",
+  borderRadius: "40px",
 };
 
 export const FinalModalComponent = (props) => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <Modal
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {/* <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.isOpen}
@@ -38,8 +46,8 @@ export const FinalModalComponent = (props) => {
         }}
       >
         <Fade in={props.isOpen}>
-          <Box sx={style} className="final_modal">
-            <div
+          <Box sx={style} className="final_modal"> */}
+      {/* <div
               className="typewriter"
               style={{
                 maxHeight: "30px",
@@ -47,7 +55,10 @@ export const FinalModalComponent = (props) => {
                 color: "#fff",
               }}
             >
-              <h3 style={{fontFamily:"poppins-light"}}> 🎉🎉 Woohoooo !! Check Generated Folder...</h3>
+              <h3 style={{ fontFamily: "poppins-light" }}>
+                {" "}
+                🎉🎉 Woohoooo !! Check Generated Folder...
+              </h3>
             </div>
             <div
               style={{
@@ -59,9 +70,51 @@ export const FinalModalComponent = (props) => {
               }}
             >
               Hey Guys,
-            </div>
-            <a href={`${process.env.REACT_APP_SERVERURL/JSON.parse(sessionStorage.uuid)}`}>download</a>
-            <div
+            </div> */}
+      <div>
+        <h3
+          style={{
+            color: "white",
+            textAlign: "center",
+            marginBottom: "20px",
+            fontFamily: "poppins-light",
+          }}
+        >
+          Dowload the generated nfts are here,
+        </h3>
+        <a
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "30px",
+            fontWeight: "bold",
+          }}
+          href={`${process.env.REACT_APP_SERVERURL}/${JSON.parse(
+            sessionStorage.uuid
+          )}.zip`}
+          target="_blank"
+          download
+        >
+          <Button
+            style={{
+              background:
+                "linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)",
+              padding: "15px 60px",
+              fontFamily: "poppins-light",
+            }}
+            onClick={() => navigate("/Uploading")}
+            variant="contained"
+            color="primary"
+            size="large"
+            // className={classes.button}
+            startIcon={<SaveIcon />}
+          >
+            DOWNLOAD
+          </Button>
+        </a>
+      </div>
+      {/* <div
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -89,7 +142,7 @@ export const FinalModalComponent = (props) => {
             </div>
 
             <div
-            className="links-div"
+              className="links-div"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -98,10 +151,9 @@ export const FinalModalComponent = (props) => {
                 backgroundColor: "rgba(39, 36, 52, 0.5)",
                 padding: "10px",
                 borderRadius: "10px",
-                
               }}
             >
-              <ol style={{width:"100%"}}>
+              <ol style={{ width: "100%" }}>
                 <p
                   style={{
                     display: "flex",
@@ -165,10 +217,10 @@ export const FinalModalComponent = (props) => {
                   Do tag me as #sickalien in your posts as well , cheers !
                 </p>
               </ol>
-            </div>
-          </Box>
+            </div> */}
+      {/* </Box>
         </Fade>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };

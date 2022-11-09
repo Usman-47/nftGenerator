@@ -10,16 +10,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import {NavLink} from "react-router-dom"
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo2.png'
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
 import Hidden from '@material-ui/core/Hidden';
-
-
-
 
 // Using Inline Styling
 const useStyles = makeStyles((theme) => ({
@@ -83,9 +80,6 @@ const handleClick = (event) => {
   setAnchorE2(event.currentTarget);
 };
 
-
-
-
 // -------------
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -103,6 +97,7 @@ const handleClick = (event) => {
       style={{
         background: "transparent",
         boxShadow: "none",
+        marginBottom:"20px"
       }}
     >
       <Toolbar
@@ -151,12 +146,26 @@ const handleClick = (event) => {
               </Menu>
           
           <Hidden smDown>
-       <div>
+     
        <NavLink to="/">
-        <img width="300px" src={logo} alt="" />
+       <div className='logo_div'>
+        <img width="210px" src={logo} alt="" />
+        </div>
         </NavLink>
-       </div>
-       <div style={{ display:"flex"}}>
+       
+       <div style={{ display:"flex", paddingTop:'20px'}}>
+      <NavLink to="/">
+      <div className="eachOne">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="landingNavMenu"
+            style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px" }}
+          >
+            HOME
+          </Typography>
+        </div>
+      </NavLink>
        <div className="eachOne">
           <Typography
             variant="h6"
@@ -255,7 +264,7 @@ const handleClick = (event) => {
             style={{ fontFamily: "poppins-light", fontWeight: 600, fontSize:"14px", padding:"14px 8px" }}
         onClick={handleClick}
       >
-        CHANGE GAMES <ArrowDropDownIcon/>
+        CHAIN GAMES <ArrowDropDownIcon/>
       </Button>
       <StyledMenu
         id="customized-menu"

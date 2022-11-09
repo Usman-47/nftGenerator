@@ -10,12 +10,32 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import { Typography } from "@material-ui/core";
 import "./buildFolder.css";
 
+// ===========
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     width: '100%',
+//     backgroundColor: "red !important",
+//   },
+//   heading: {
+//     fontSize: theme.typography.pxToRem(15),
+//     fontWeight: theme.typography.fontWeightRegular,
+//   },
+// }));
+
+// ==============
+
 export const Folders = (props) => {
   const { objects, dispatch1 } = React.useContext(ObjectContext);
   const { selection, dispatch2 } = React.useContext(ObjectSelection);
   const children = props.children;
   let folderStructure = [];
-
+  // const classes = useStyles();
   const handleClick = (folder, subfolder) => {
     //console.log(objects, "folder: ", folder, subfolder, "index: ", index);
     dispatch1({
@@ -32,7 +52,14 @@ export const Folders = (props) => {
     <div>
       {children &&
         children.map((folder, index1) => (
-          <div  style={{marginBottom:"20px", border:"1px solid #32306A", borderRadius:"12px",}}>
+          <div style={{}}>
+          <Accordion className="accordian_root">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon style={{color:"#CECECE"}} />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+         
             <ListItem key={index1} button component="a" href="#">
               <Typography
                 // style={{  }}
@@ -47,10 +74,11 @@ export const Folders = (props) => {
                 {folder.name.slice(0, 1).toUpperCase() + folder.name.slice(1)}
               </Typography>
             </ListItem>
-
+</AccordionSummary>
           <div>
           {folder.children.map((subfolder, index2) => (
               <div onClick={() => handleClick(folder.name, subfolder)}>
+              <AccordionDetails>
                 <ListItem key={index2} button component="a" href="#" style={{borderBottom:"1px solid #2F2861",}}>
                   <Typography
                     className="elementSubfolder"
@@ -61,6 +89,7 @@ export const Folders = (props) => {
                     {subfolder.name}
                   </Typography>
                 </ListItem>
+                </AccordionDetails>
               </div>
             ))}
           </div>
@@ -74,6 +103,7 @@ export const Folders = (props) => {
                 </ListItem>
               }
             />
+            </Accordion>
           </div>
         ))}
     </div>

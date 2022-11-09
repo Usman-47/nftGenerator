@@ -3,11 +3,12 @@ import * as React from "react";
 import { Button, Fade, TextField } from "@material-ui/core";
 import { NumberOfCopies, ObjectContext, TreeContext } from "./EditingPage";
 import { ToastContainer, toast } from "react-toastify";
-
+import AddIcon from '@material-ui/icons/Add';
 import { Backdrop } from "@material-ui/core";
 import { Box } from "@material-ui/core";
 import { DemoCarousel } from "./Carousel";
 import { Modal } from "@material-ui/core";
+import CloseIcon from '@material-ui/icons/Close';
 import axios from "axios";
 
 const style = {
@@ -59,19 +60,26 @@ export const ModalComponent = (props) => {
       URL: URL,
     };
     console.log(data, "dataaaaaa");
+    
+  if(!data.objects.name || !data.objects.symbol || !data.objects.sellerFee || !data.objects.description || !data.objects.URL){
+    alert("kindly fill the fields")
+
+  }else{
     props.openLoadingModal();
     axios
-      .post(`${process.env.REACT_APP_SERVERURL}/submitDetails`, data)
-      .then(function (response) {
-        window.location.href = "/loading";
-        console.log(response);
-     
-      })
-      .catch(function (error) {
-        alert(error);
-        window.location.href = "/error";
-        console.log(error);
-      });
+    .post(`${process.env.REACT_APP_SERVERURL}/submitDetails`, data)
+    .then(function (response) {
+      window.location.href = "/loading";
+      console.log(response);
+   
+    })
+    .catch(function (error) {
+      alert(error);
+      window.location.href = "/error";
+      console.log(error);
+    });
+
+  }
   };
 
   const handleFormSubmit = async () => {
@@ -126,6 +134,9 @@ export const ModalComponent = (props) => {
       >
         <Fade in={props.isOpen}>
           <Box sx={style} className="carousel_box">
+          <div style={{textAlign:"end"}}>
+          <CloseIcon className="close_icon" style={{color:"white"}} onClick={()=>{props.handleClose()}}/>
+          </div>
             {!next && (
               <>
               <div
@@ -133,13 +144,13 @@ export const ModalComponent = (props) => {
                     justifyContent: "center",
                     display: "flex",
                     fontWeight: "bold",
-                    fontSize: "46px",
+                    fontSize: "40px",
                     fontFamily: "Muller-ExtraBold",
                     marginBottom: "20px",
                     color: "white",
                   }}
                 >
-                  REVIEW
+                  Collection Description
                 </div>
                 <div
                 style={{
@@ -166,16 +177,18 @@ export const ModalComponent = (props) => {
                         fontWeight: 500,
                         fontFamily: "poppins-light",
                         color: "#CECECE",
-                        marginLeft: "3%",
+                        marginLeft: "2%",
                       }}
                     >
                       NFT Project name :
                     </div>
                     <TextField
+                    required
                       size="medium"
                       variant="standard"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="name"
+                      name="name"
                       onBlur={(event) => {
                         setName(event.target.value);
                       }}
@@ -204,7 +217,7 @@ export const ModalComponent = (props) => {
                         fontFamily: "poppins-light",
                        
                         color: "#CECECE",
-                        marginLeft: "3%",
+                        marginLeft: "2%",
                       }}
                     >
                       Symbol :
@@ -212,6 +225,8 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
+                      required
+                      name="symbol"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="symbol"
                       onBlur={(event) => {
@@ -238,16 +253,18 @@ export const ModalComponent = (props) => {
                         fontWeight: 500,
                         fontFamily: "poppins-light",
                         color: "#CECECE",
-                        marginLeft: "3%",
+                        marginLeft: "2%",
                       }}
                     >
-                      Seller Fee Basis Points :
+                      Royalty Percent :
                     </div>
                     <TextField
+                    required
                       size="medium"
                       variant="standard"
+                      name="percent"
                       // inputProps={{ style: { textAlign: "center" } }}
-                      placeholder="Seller Fee"
+                      placeholder=" Royalty Percent"
                       onBlur={(event) => {
                         setSellerFee(event.target.value);
                       }}
@@ -255,69 +272,73 @@ export const ModalComponent = (props) => {
                         justifyContent: "flex-start",
                         display: "flex",
                         // width: "500px",
-                        marginLeft: "10px",
+                        marginLeft: "5px",
                         borderRadius: "10px",
                       }}
                     />
                     </div>
-
-                    <div style={{ background:
-                          "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
-                        border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px",}}>
-                    <div
-                      style={{
-                        justifyContent: "flex-start",
-                        display: "flex",
-                        fontSize: "14px",
-                        fontWeight: 500,
-                        fontFamily: "poppins-light",
-                        color: "#CECECE",
-                        marginLeft: "3%",
-                      }}
-                    >
-                      Creators :
-                    </div>
-                    {inputFields.map((input, index) => (
-                      <>
-                        <TextField
-                          size="medium"
-                          variant="standard"
-                          // inputProps={{ style: { textAlign: "center" } }}
-                          placeholder="creator"
-                          name="creator"
-                          onBlur={(event) => {
-                            handleFormChange(index, event);
-                          }}
+                      <div style={{display:"flex", alignItems:"center", justifyContent:"space-between",  marginBottom:"10px"}}>
+                        <div style={{ background:
+                              "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
+                            border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", width:"88%"}}>
+                        <div
                           style={{
                             justifyContent: "flex-start",
                             display: "flex",
-                            // width: "500px",
-                            marginLeft: "10px",
-                            borderRadius: "10px",
+                            fontSize: "14px",
+                            fontWeight: 500,
+                            fontFamily: "poppins-light",
+                            color: "#CECECE",
+                            marginLeft: "2%",
                           }}
-                        />
-                        <TextField
-                          size="small"
-                          variant="standard"
-                          // inputProps={{ style: { textAlign: "center" } }}
-                          placeholder="share"
-                          name="share"
-                          onBlur={(event) => {
-                            handleFormChange(index, event);
-                          }}
-                          style={{
-                            justifyContent: "flex-start",
-                            display: "flex",
-                            // width: "500px",
-                            marginLeft: "10px",
-                            borderRadius: "10px",
-                          }}
-                        />
-                      </>
-                    ))}
-                    </div>
-                    <button style={{background:"rgba(39, 36, 52, 0.5)", borderRadius:"8px", color:"#CECECE", borderColor:"rgba(39, 36, 52, 0.5)", marginBottom:"10px"}} onClick={addFields}>Add More..</button>
-
+                        >
+                          Royalty Wallets :
+                        </div>
+                        {inputFields.map((input, index) => (
+                          <>
+                            <TextField
+                            required
+                              size="medium"
+                              variant="standard"
+                              // inputProps={{ style: { textAlign: "center" } }}
+                              placeholder="Royalty Wallets"
+                              name="wallets"
+                              onBlur={(event) => {
+                                handleFormChange(index, event);
+                              }}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                // width: "500px",
+                                marginLeft: "5px",
+                                borderRadius: "10px",
+                                padding:"10px 0 15px 0"
+                              }}
+                            />
+                            <TextField
+                            required
+                              size="small"
+                              variant="standard"
+                              // inputProps={{ style: { textAlign: "center" } }}
+                              placeholder="share"
+                              name="share"
+                              onBlur={(event) => {
+                                handleFormChange(index, event);
+                              }}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                // width: "500px",
+                                marginLeft: "5px",
+                                borderRadius: "10px",
+                                padding:"0 0 15px 0"
+                              }}
+                            />
+                          </>
+                        ))}
+                        </div>
+                        <button className="plus_btn" style={{padding:"10px 5px" , width:"60px", background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)", borderRadius:"8px", color:"#CECECE", borderColor:"rgba(39, 36, 52, 0.5)"}} onClick={addFields}><AddIcon/></button>
+                      </div>
                     <div style={{ background:
                           "linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%)",
                         border: "1px solid #32306A",  borderRadius: "10px", padding:"5px 0 0 10px", marginBottom:"10px"}}>
@@ -330,14 +351,16 @@ export const ModalComponent = (props) => {
                         fontFamily: "poppins-light",
                        
                         color: "#CECECE",
-                        marginLeft: "3%",
+                        marginLeft: "2%",
                       }}
                     >
                       External Link (Website):
                     </div>
                     <TextField
+                    required
                       size="medium"
                       variant="standard"
+                      name="link"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="URL"
                       onBlur={(event) => {
@@ -365,14 +388,16 @@ export const ModalComponent = (props) => {
                         fontFamily: "poppins-light",
                       
                         color: "#CECECE",
-                        marginLeft: "3%",
+                        marginLeft: "2%",
                       }}
                     >
                       Description :
                     </div>
                     <TextField
+                    required
+                    name="description"
                       size="small"
-                      variant="outlined"
+                      // variant="outlined"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="description"
                       onBlur={(event) => {
@@ -382,9 +407,10 @@ export const ModalComponent = (props) => {
                       style={{
                         justifyContent: "flex-start",
                         display: "flex",
-                        width: "600px",
+                        // width: "600px",
                         marginLeft: "10px",
                         borderRadius: "10px",
+                       
                       }}
                     />
                     </div>
@@ -397,7 +423,7 @@ export const ModalComponent = (props) => {
                     marginTop: "30px",
                   }}
                 >
-                  <Button
+                  {/* <Button
                   style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)'}}
                     variant="contained"
                     color="secondary"
@@ -405,6 +431,15 @@ export const ModalComponent = (props) => {
                     onClick={handleFormSubmit}
                   >
                     Next
+                  </Button> */}
+                  <Button
+                  style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)', padding:"10px 44px", borderRadius:"0", fontFamily:"poppins-light"}}
+                    variant="contained"
+                    color="secondary"
+                    size="large"
+                    onClick={handleClick}
+                  >
+                    Create
                   </Button>
                 </div>
               </div>
@@ -431,7 +466,7 @@ export const ModalComponent = (props) => {
                   >
                     Create
                   </Button>
-                  <a href="/file.txt">download</a>
+                 
                 </div>
               </div>
             )}

@@ -14,23 +14,30 @@
   }
   .Toastify__toast--success {
     border: 1px solid #44327E !important;
-    border-radius: 50px !important;
-    background: #F0F9FA !important;
+    /* border-radius: 50px !important; */
+    background: linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%) !important;
   }
   .toastBody {
     font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
-    /* color: #10171D;  */
+    color: white !important; 
     font-size: 0.875rem !important;
+    /* background: #44327E !important; */
   }
   .toastProgress {
-    background: #44327E !important;
+    background: white !important;
+  }
+  .download_link :hover{
+    color: #4E39D7 !important;
+  }
+  a:hover{
+    color: #4E39D7 !important;
   }
 
 .upload-file-main-div{
     background-image: url('./assets/images/Vector\ 11.png');
     background-repeat: no-repeat;   
     background-position: center;
-    height: 400px !important;
+    height: 350px !important;
    
 }
 .editor_textfield{
@@ -247,7 +254,45 @@ input[type=number]::-webkit-outer-spin-button {
 .button-styling img {
   padding: 5px;
 }
+.plus_btn:hover{
+  cursor: pointer;
 
+}
+.logo_div{
+  /* width: 309px; */
+ 
+background-image: url('./assets/images/logo-bg.png');
+  /* border-bottom-right-radius: 10px !important; */
+  padding: 7px 0 0px 25px;
+  /* padding: 5px 0 0 60px; */
+  position: absolute;
+width: 309px;
+height: 95px;
+left: 0px;
+top: 0px;
+}
+
+.logo_div2{
+background-image: url('./assets/images/logo-bg.png');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+border-bottom-right-radius: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 95px;
+
+/* left: 0px; */
+/* top: 0px; */
+}
+
+.accordian_root{
+  background: linear-gradient(180deg, rgba(67, 49, 118, 0.0728) 0%, rgba(24, 3, 67, 0) 100%) !important;
+  margin-bottom:10px;
+   border: 1px solid #32306A; 
+   border-radius: 12px !important;
+}
 @media (min-width : 1325px) and (max-width : 1425px) {
   .navbar a {
       font-size: 14px !important;
@@ -309,6 +354,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* ========== navbar style end ============= */
 
 
+
 @media screen and (max-width: 768px) {
   /* .imageDimensions{
     width: 350px !important;
@@ -363,7 +409,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 20px !important;
 }
 }
-
+@media screen and (max-width: 1205px) {
+  .circles{
+    display: none !important;
+   }
+}
 @media screen and (max-width: 1051px) {
 
 .folder-strucrure{
@@ -387,4 +437,26 @@ input[type=number]::-webkit-outer-spin-button {
 .carousel_box{
   width: 100% !important;
 }
+}
+@media (max-width: 540px) {
+  .footer_div{
+    display: block !important;
+    text-align: center;
+   
+  }
+  .icons_div{
+    margin-bottom: 10px;
+  }
+.footer_logo{
+  width: 150px !important;
+}
+ .upload-file-main-div{
+  width: 300px !important;
+  height: 280px !important;
+  margin: 0 auto;
+  margin-top: 30px !important;
+  margin-bottom: 50px !important;
+
+ }
+  
 }

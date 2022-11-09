@@ -6,7 +6,7 @@ import { Button, CircularProgress } from "@material-ui/core";
 
 import "./style.css";
 import { FinalModalComponent } from "./finalModal";
-
+import Footer from "../EditingPage/footer";
 export const Fluidity = () => {
   const [isLoading, setButtonLoading] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
@@ -98,7 +98,7 @@ export const Fluidity = () => {
       <div
         style={{
           // background: "#00000000",
-          paddingTop: "20vh",
+          // paddingTop: "20vh",
           display: "flex",
           justifyContent: "center",
           marginBottom:"200px"
@@ -122,7 +122,8 @@ export const Fluidity = () => {
           // marginTop: "50px",
         }}
       >
-        <Button
+
+       {!isUploaded ? <Button
         style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
           variant="contained"
           color="secondary"
@@ -130,8 +131,8 @@ export const Fluidity = () => {
           onClick={handleClickGenerate}
           disabled={loading}
         >
-          Generate Link
-        </Button>
+          Generate
+        </Button>:    <FinalModalComponent isOpen={finalModal} handleClose={handleClose} />}
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "2vh" }}
@@ -149,7 +150,7 @@ export const Fluidity = () => {
       </div>
       <div className="form-group">
         <ToastContainer
-          position="bottom-right"
+          position="top-right"
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={true}
@@ -160,9 +161,12 @@ export const Fluidity = () => {
           pauseOnHover
         />
       </div>
-      <div>
+      {/* <div>
         <FinalModalComponent isOpen={finalModal} handleClose={handleClose} />
-      </div>
+      </div> */}
+      <div style={{position:"fixed",  width: '100%', bottom:"0"}}>
+        <Footer/>
+        </div>
     </div>
   );
 };

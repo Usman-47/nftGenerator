@@ -1,6 +1,6 @@
 .landing-page-main-div{
     background-image: url("../assets/images/bg.png");
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-size: 100% 100%;
     /* padding-top: 100px; */
 }
@@ -20,7 +20,7 @@
 }
 
 .circles{
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
