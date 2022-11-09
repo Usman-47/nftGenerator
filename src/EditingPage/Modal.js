@@ -60,26 +60,19 @@ export const ModalComponent = (props) => {
       URL: URL,
     };
     console.log(data, "dataaaaaa");
-    
-  if(!data.objects.name || !data.objects.symbol || !data.objects.sellerFee || !data.objects.description || !data.objects.URL){
-    alert("kindly fill the fields")
-
-  }else{
     props.openLoadingModal();
     axios
-    .post(`${process.env.REACT_APP_SERVERURL}/submitDetails`, data)
-    .then(function (response) {
-      window.location.href = "/loading";
-      console.log(response);
-   
-    })
-    .catch(function (error) {
-      alert(error);
-      window.location.href = "/error";
-      console.log(error);
-    });
-
-  }
+      .post(`${process.env.REACT_APP_SERVERURL}/submitDetails`, data)
+      .then(function (response) {
+        window.location.href = "/loading";
+        console.log(response);
+     
+      })
+      .catch(function (error) {
+        alert(error);
+        window.location.href = "/error";
+        console.log(error);
+      });
   };
 
   const handleFormSubmit = async () => {
@@ -188,7 +181,6 @@ export const ModalComponent = (props) => {
                       variant="standard"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="name"
-                      name="name"
                       onBlur={(event) => {
                         setName(event.target.value);
                       }}
@@ -225,8 +217,6 @@ export const ModalComponent = (props) => {
                     <TextField
                       size="medium"
                       variant="standard"
-                      required
-                      name="symbol"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="symbol"
                       onBlur={(event) => {
@@ -259,10 +249,8 @@ export const ModalComponent = (props) => {
                       Royalty Percent :
                     </div>
                     <TextField
-                    required
                       size="medium"
                       variant="standard"
-                      name="percent"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder=" Royalty Percent"
                       onBlur={(event) => {
@@ -297,12 +285,11 @@ export const ModalComponent = (props) => {
                         {inputFields.map((input, index) => (
                           <>
                             <TextField
-                            required
                               size="medium"
                               variant="standard"
                               // inputProps={{ style: { textAlign: "center" } }}
                               placeholder="Royalty Wallets"
-                              name="wallets"
+                              name="creator"
                               onBlur={(event) => {
                                 handleFormChange(index, event);
                               }}
@@ -316,7 +303,6 @@ export const ModalComponent = (props) => {
                               }}
                             />
                             <TextField
-                            required
                               size="small"
                               variant="standard"
                               // inputProps={{ style: { textAlign: "center" } }}
@@ -357,10 +343,8 @@ export const ModalComponent = (props) => {
                       External Link (Website):
                     </div>
                     <TextField
-                    required
                       size="medium"
                       variant="standard"
-                      name="link"
                       // inputProps={{ style: { textAlign: "center" } }}
                       placeholder="URL"
                       onBlur={(event) => {
@@ -394,8 +378,6 @@ export const ModalComponent = (props) => {
                       Description :
                     </div>
                     <TextField
-                    required
-                    name="description"
                       size="small"
                       // variant="outlined"
                       // inputProps={{ style: { textAlign: "center" } }}
