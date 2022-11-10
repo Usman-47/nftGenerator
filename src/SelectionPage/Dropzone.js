@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import img from "../assets/images/Frame.png";
 
+
+
 export function MyDropzone() {
   const [loaded, setLoaded] = React.useState(0);
   const [Toast, setToast] = useState();

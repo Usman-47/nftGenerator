@@ -96,7 +96,7 @@ export const EditorInput = (props) => {
         <InputBase
         className="editor_textfield"
         type="number"
-      placeholder="0"
+        placeholder="100"
         inputProps={{ 'aria-label': 'naked' }}
         onChange={(event) => {
           

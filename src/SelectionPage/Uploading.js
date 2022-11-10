@@ -82,7 +82,7 @@ export const Uploading = (Toast) => {
             
           }}
          
-          href={`${process.env.REACT_APP_SERVERURL}/layers.zip`}
+          href={`${process.env.REACT_APP_SERVERURL}/Silly_Sausages_4.zip`}
           download
           target="_blank"
         >
