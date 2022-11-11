@@ -34,14 +34,14 @@ export const ThreeData = () => {
   };
   return (
     <>
-       <div className="landing-page-main-div">
-      {/* <div style={{background:"red"}}> */}
+      <div className='landing-page-main-div'>
+        {/* <div style={{background:"red"}}> */}
         <div>
-        {/* <Navb/> */}
+          {/* <Navb/> */}
           <NavHomePage
-            // setAboutOpen={setAboutOpen}
-            // setContactOpen={setContactOpen}
-            // setInstructionsOpen={setInstructionsOpen}
+          // setAboutOpen={setAboutOpen}
+          // setContactOpen={setContactOpen}
+          // setInstructionsOpen={setInstructionsOpen}
           />
         </div>
 
@@ -78,7 +78,7 @@ export const ThreeData = () => {
           }}
         >
           <p
-            className="glitch"
+            className='glitch'
             style={{
               zIndex: 3,
               marginTop: "18vh",
@@ -91,7 +91,7 @@ export const ThreeData = () => {
           </p>
         </div>
 
-        <div className="title" style={{ zIndex: 3, }}>
+        <div className='title' style={{ zIndex: 3 }}>
           <h3
             style={{
               zIndex: 3,
@@ -103,35 +103,40 @@ export const ThreeData = () => {
           </h3>
         </div>
 
-       <div style={{display:"flex", justifyContent:"center", marginBottom:"60px"}}>
-       <button
-          className="nice"
-          style={{ zIndex: 3, fontFamily: "poppins-light" }}
-          onClick={handleClick}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "60px",
+          }}
         >
-          Enter
-        </button>
-       </div>
+          <button
+            className='nice'
+            style={{ zIndex: 3, fontFamily: "poppins-light" }}
+            onClick={handleClick}
+          >
+            Enter
+          </button>
+        </div>
         <div style={{ zIndex: 3, display: "flex", justifyContent: "center" }}>
           <p
-            className="homepageContent"
+            className='homepageContent'
             style={{
-              
-            // position:"absolute",
-            // bottom:"5%",
+              // position:"absolute",
+              // bottom:"5%",
               zIndex: 3,
               fontFamily: "poppins-light",
               fontWeight: "400",
               animation: "glow 2s ease-in-out infinite alternate",
             }}
           >
-             Generating art just got a whole lot easier
+            Generating art just got a whole lot easier
           </p>
         </div>
-        <div style={{position:"fixed",  width: '100%', bottom:"0"}}>
-        <Footer/>
+        <div style={{ position: "fixed", width: "100%", bottom: "0" }}>
+          <Footer />
         </div>
-      
+
         {/* <img
           src={require("./Alien.png")}
           alt="AlienImage"
@@ -156,11 +161,8 @@ export const ThreeData = () => {
             handleClose={handleCloseInstructions}
           />
         </div>
-      {/* </div> */}
-     
-    </div>
-    
-      </>
-   
+        {/* </div> */}
+      </div>
+    </>
   );
 };

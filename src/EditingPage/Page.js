@@ -4,11 +4,11 @@ import { Editor } from "./Editor";
 import { Items } from "./Items";
 import { NumberOfCopies, ObjectContext, ObjectSelection } from "./EditingPage";
 import { Typography, TextField } from "@material-ui/core";
-import Hidden from '@material-ui/core/Hidden';
+import Hidden from "@material-ui/core/Hidden";
 import { EditorInput } from "./EditorInput";
 import TreesTemp from "./FolderStructure";
 import { Button } from "@material-ui/core";
-import InputBase from '@material-ui/core/InputBase';
+import InputBase from "@material-ui/core/InputBase";
 import "./Page.css";
 import { ModalComponent } from "./Modal";
 import { LoadingModalComponent } from "./loadingModal";
@@ -16,11 +16,9 @@ import axios from "axios";
 import { RarityModalComponent } from "./RarityModal";
 import TotalCopies from "./totalCopies";
 
-
-
 export const Page = (props) => {
   const { objects, dispatch1 } = React.useContext(ObjectContext);
-  
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -139,7 +137,7 @@ export const Page = (props) => {
   return (
     <div>
       <div
-      className="editor-left"
+        className='editor-left'
         style={{
           width: "18%",
           float: "left",
@@ -149,85 +147,98 @@ export const Page = (props) => {
           overflowY: "auto",
           zIndex: 20,
           transition: "width .35s",
-
         }}
       >
         <TreesTemp folderData={props.folderStructure} />
       </div>
       <div
-      className="editor-mid"
+        className='editor-mid'
         style={{
           width: "61%",
           float: "left",
           minHeight: "100vh",
           // padding: "5px",
-          
         }}
       >
         <div
-        className="canvas_inputs"
+          className='canvas_inputs'
           style={{
             display: "flex",
             justifyContent: "space-around",
-            gap:"50px",
+            gap: "50px",
             backgroundColor: "rgba(39, 36, 52, 0.5)",
             color: "#CECECE",
             fontFamily: "Poppins",
             // marginTop: "3vh",
             // paddingRight: "5px",
-            padding:'20px 0 20px 0',
-            margin:"0 50px 0 50px"
+            padding: "20px 0 20px 0",
+            margin: "0 50px 0 50px",
           }}
         >
-          <div style={{border: '1px solid #32306A', borderRadius:"12px", padding:"0px 20px", width:"30%", display:"flex", justifyContent:"space-between", alignItems:"center", gap:"10px"}}>
-          <div style={{width:"250px"}}>
-            Height: <br />
-          
-           
-           <Slider
-              value={canvasHeight.value}
-              valueLabelDisplay="auto"
-              onChange={(event, value) => {
-                setCanvasHeight({value});
-                      }}
-              min={0}
-              max={1000}
+          <div
+            style={{
+              border: "1px solid #32306A",
+              borderRadius: "12px",
+              padding: "0px 20px",
+              width: "30%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <div style={{ width: "250px" }}>
+              Height: <br />
+              <Slider
+                value={canvasHeight.value}
+                valueLabelDisplay='auto'
+                onChange={(event, value) => {
+                  setCanvasHeight({ value });
+                }}
+                min={0}
+                max={1000}
               />
-     </div>
-     <Hidden smDown>
-     <InputBase
-        className="editor_textfield mid_textFields"
-        type="number"
-      placeholder="0"
-        inputProps={{ 'aria-label': 'naked' }}
-        onChange={(event) => {
-                setCanvasHeight({
-                  value: JSON.parse(event.target.value),
-                });
-              }}
-        
-      />
-      </Hidden>
-          
-            
+            </div>
+            <Hidden smDown>
+              <InputBase
+                className='editor_textfield mid_textFields'
+                type='number'
+                placeholder='0'
+                inputProps={{ "aria-label": "naked" }}
+                onChange={(event) => {
+                  setCanvasHeight({
+                    value: JSON.parse(event.target.value),
+                  });
+                }}
+              />
+            </Hidden>
           </div>
-          <div style={{border: '1px solid #32306A', borderRadius:"12px", padding:"0px 20px",  width:"30%", display:"flex", justifyContent:"space-between", alignItems:"center",  gap:"5px"}}>
-          <div style={{width:"250px"}}>
-          Width: <br />
-         
-          <Slider
-            value={canvasWidth.value}
-            valueLabelDisplay="auto"
-            onChange={(event, value) => {
-              
-                      setCanvasWidth({value});
-                    }}
-            min={0}
-            max={1000}
-          />
-          </div>
-         
-          {/* <input
+          <div
+            style={{
+              border: "1px solid #32306A",
+              borderRadius: "12px",
+              padding: "0px 20px",
+              width: "30%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "5px",
+            }}
+          >
+            <div style={{ width: "250px" }}>
+              Width: <br />
+              <Slider
+                value={canvasWidth.value}
+                valueLabelDisplay='auto'
+                onChange={(event, value) => {
+                  setCanvasWidth({ value });
+                }}
+                min={0}
+                max={1000}
+              />
+            </div>
+
+            {/* <input
             className="input_field"
            
               onChange={(event) => {
@@ -237,33 +248,26 @@ export const Page = (props) => {
               }}
             /> */}
             <Hidden smDown>
-            <InputBase
-              className="editor_textfield mid_textFields"
-              type="number"
-              placeholder="0"
-              inputProps={{ 'aria-label': 'naked' }}
-              onChange={(event) => {
-                setCanvasWidth({
-                  value: JSON.parse(event.target.value),
-                });
-              }}
-        
-      />
-      </Hidden>
+              <InputBase
+                className='editor_textfield mid_textFields'
+                type='number'
+                placeholder='0'
+                inputProps={{ "aria-label": "naked" }}
+                onChange={(event) => {
+                  setCanvasWidth({
+                    value: JSON.parse(event.target.value),
+                  });
+                }}
+              />
+            </Hidden>
 
-
-        
-            
-                {/* <div style={{maxWidth:"200px", margin:"0 auto"}}>
+            {/* <div style={{maxWidth:"200px", margin:"0 auto"}}>
             
             </div> */}
-          
           </div>
         </div>
-       
-        
-        
-        <div id="content">
+
+        <div id='content'>
           <Items
             onClick={setCurrentElement}
             files={props.folderStructure}
@@ -291,14 +295,13 @@ export const Page = (props) => {
         </div> */}
       </div>
       <div
-      className="editor-right"
+        className='editor-right'
         style={{
           width: "21%",
           float: "right",
           // borderRadius: "10px",
           zIndex: 20,
           // marginTop: "10px",
-         
         }}
       >
         <div
@@ -306,16 +309,16 @@ export const Page = (props) => {
             backgroundColor: "#272434",
             height: "100vh",
             margin: "0px 0px 5px 0px",
-            overflowY:"auto"
-        
+            overflowY: "auto",
+
             // boxShadow:
             //   "-5px 2px 4px -1px rgb(0 0 0 / 20%), -5px 4px 5px 0px rgb(0 0 0 / 14%), -5px 1px 10px 0px rgb(0 0 0 / 12%)",
           }}
         >
-        <div
-            variant="h6"
-            color="inherit"
-            className="landingNavMenu collection-generator"
+          <div
+            variant='h6'
+            color='inherit'
+            className='landingNavMenu collection-generator'
             onClick={(event) => (window.location.href = "/")}
           >
             COLLECTION GENERATOR
@@ -335,16 +338,16 @@ export const Page = (props) => {
           >
             <div style={{ justifyContent: "center", display: "flex" }}>
               <Button
-                variant="contained"
+                variant='contained'
                 style={{
                   // borderRadius: 2,
                   backgroundColor: "transparent",
-                  border:"1px solid #C615A9",
+                  border: "1px solid #C615A9",
                   color: "#fff",
                   padding: "10px 20px",
                   fontSize: "13px",
                 }}
-                size="medium"
+                size='medium'
                 onClick={handleRarityOpen}
               >
                 💎 Add Rarity
@@ -358,9 +361,15 @@ export const Page = (props) => {
               }}
             >
               <Button
-                variant="contained"
-                style={{ background: "linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)", color: "#fff", padding: "10px 36px", fontFamily:"Poppins"}}
-                size="large"
+                variant='contained'
+                style={{
+                  background:
+                    "linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)",
+                  color: "#fff",
+                  padding: "10px 36px",
+                  fontFamily: "Poppins",
+                }}
+                size='large'
                 onClick={
                   totalCopies && totalCopies.value > 10000 ? null : handleOpen
                 }

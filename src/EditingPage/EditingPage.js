@@ -38,7 +38,7 @@ export const EditingPage = () => {
 
   const subfoldersLength =
     fileData && fileData.children && fileData.children.length;
-
+  console.log(subfoldersLength, "subfoldersLength");
   const hashCodeElement = [];
   const pathList = [];
 

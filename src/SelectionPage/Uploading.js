@@ -17,34 +17,33 @@ export const Uploading = (Toast) => {
   };
   return (
     <div>
-    <div className="form-group" >
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={true}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            progressClassName="toastProgress"
-            bodyClassName="toastBody"
-          />
+      <div className='form-group'>
+        <ToastContainer
+          position='top-right'
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          progressClassName='toastProgress'
+          bodyClassName='toastBody'
+        />
+      </div>
+
+      <div className='area'>
+        <div style={{ position: "relative", zIndex: 5 }}>
+          <NavHomePage />
         </div>
-      
-      <div className="area" >
-      <div style={{position: "relative" , zIndex: 5}}>
-      <NavHomePage  />
-      </div>
-      <div>
-      </div>
+        <div></div>
         <h1
           style={{
             fontFamily: "Muller-ExtraBold",
             color: "#fff",
-            fontWeight: 800, fontSize: '40px'
-
+            fontWeight: 800,
+            fontSize: "40px",
           }}
         >
           Upload Files
@@ -67,36 +66,46 @@ export const Uploading = (Toast) => {
             <p style={{fontfamily:"Poppins", fontSize:"17px"}}>Shuffled</p>
           </div>
         </div> */}
-      
-        <p style={{display:"flex", justifyContent:"center", color:"white", fontWeight: 800, fontSize: '18px', fontFamily:"Muller-Light", fontWeight: 800, textTransform:"uppercase"}}>click below to upload your art files</p>
+
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            color: "white",
+            fontWeight: 800,
+            fontSize: "18px",
+            fontFamily: "Muller-Light",
+            fontWeight: 800,
+            textTransform: "uppercase",
+          }}
+        >
+          click below to upload your art files
+        </p>
         <a
-        className="download_link"
+          className='download_link'
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             fontSize: "12px",
             fontWeight: "bold",
-            color:"white",
-            marginTop:"30px"
-            
+            color: "white",
+            marginTop: "30px",
           }}
-         
           href={`${process.env.REACT_APP_SERVERURL}/layers.zip`}
           download
-          target="_blank"
+          target='_blank'
         >
-         
-            Download Example Input Folder <HelpOutlineIcon style={{fontSize:"14px", marginLeft:"3px"}}/>
-          
+          Download Example Input Folder{" "}
+          <HelpOutlineIcon style={{ fontSize: "14px", marginLeft: "3px" }} />
         </a>
         <div
-        className="upload-file-main-div"
+          className='upload-file-main-div'
           style={{
-            position:"relative",
-            display:"flex",
-            justifyContent:"center",
-            alignItems:"center",
+            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             // width: "40vw",
             // marginLeft: "30vw",
             // height: "50vh",
@@ -107,24 +116,27 @@ export const Uploading = (Toast) => {
             // padding: "30px",
           }}
         >
-        
-          <div style={{ position:"absolute", top:'50%', transform:"translateY(-40%)"}}>
-         
           <div
             style={{
-              fontFamily: "poppins-light",
-              fontSize: "17px",
-              // display: "flex",
-              justifyContent: "center",
-              color: "white",
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-40%)",
             }}
           >
-           Drag ‘n’ drop files here.
+            <div
+              style={{
+                fontFamily: "poppins-light",
+                fontSize: "17px",
+                // display: "flex",
+                justifyContent: "center",
+                color: "white",
+              }}
+            >
+              Drag ‘n’ drop files here.
+            </div>
+
+            <MyDropzone Toast={Toast} />
           </div>
-          
-          <MyDropzone Toast={Toast}/>
-          </div>
-          
         </div>
 
         {/* <div
@@ -149,26 +161,23 @@ export const Uploading = (Toast) => {
             Continue
           </Button>
         </div> */}
-        <div style={{position:"fixed",  width: '100%', bottom:"0"}}>
-        <Footer/>
+        <div style={{ position: "fixed", width: "100%", bottom: "0" }}>
+          <Footer />
         </div>
       </div>
 
-      
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-  
-     
+      <ul className='circles'>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 };

@@ -11,11 +11,11 @@ import { Typography } from "@material-ui/core";
 import "./buildFolder.css";
 
 // ===========
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -53,56 +53,62 @@ export const Folders = (props) => {
       {children &&
         children.map((folder, index1) => (
           <div style={{}}>
-          <Accordion className="accordian_root">
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{color:"#CECECE"}} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-         
-            <ListItem key={index1} button component="a" href="#">
-              <Typography
-                // style={{  }}
-                className="element"
-                // eslint-disable-next-line react/jsx-no-duplicate-props
-                style={{
-                  fontWeight: "bold",
-                  fontFamily: "monospace",
-                  backgroundColor: "rgba(0, 0, 0, 0.2)"
-                }}
+            <Accordion className='accordian_root'>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ color: "#CECECE" }} />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
               >
-                {folder.name.slice(0, 1).toUpperCase() + folder.name.slice(1)}
-              </Typography>
-            </ListItem>
-</AccordionSummary>
-          <div>
-          {folder.children.map((subfolder, index2) => (
-              <div onClick={() => handleClick(folder.name, subfolder)}>
-              <AccordionDetails>
-                <ListItem key={index2} button component="a" href="#" style={{borderBottom:"1px solid #2F2861",}}>
+                <ListItem key={index1} button component='a' href='#'>
                   <Typography
-                    className="elementSubfolder"
+                    // style={{  }}
+                    className='element'
+                    // eslint-disable-next-line react/jsx-no-duplicate-props
                     style={{
-                      fontFamily: "Poppins",
+                      fontWeight: "bold",
+                      fontFamily: "monospace",
+                      backgroundColor: "rgba(0, 0, 0, 0.2)",
                     }}
                   >
-                    {subfolder.name}
+                    {folder.name.slice(0, 1).toUpperCase() +
+                      folder.name.slice(1)}
                   </Typography>
                 </ListItem>
-                </AccordionDetails>
+              </AccordionSummary>
+              <div>
+                {folder.children.map((subfolder, index2) => (
+                  <div onClick={() => handleClick(folder.name, subfolder)}>
+                    <AccordionDetails>
+                      <ListItem
+                        key={index2}
+                        button
+                        component='a'
+                        href='#'
+                        style={{ borderBottom: "1px solid #2F2861" }}
+                      >
+                        <Typography
+                          className='elementSubfolder'
+                          style={{
+                            fontFamily: "Poppins",
+                          }}
+                        >
+                          {subfolder.name}
+                        </Typography>
+                      </ListItem>
+                    </AccordionDetails>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-            <TreeItem
-              nodeId="1"
-              label={
-                <ListItem root component="a" href="#">
-                  <Typography styles={{ backgroundColor: "#034b92" }}>
-                    {" "}
-                  </Typography>
-                </ListItem>
-              }
-            />
+              <TreeItem
+                nodeId='1'
+                label={
+                  <ListItem root component='a' href='#'>
+                    <Typography styles={{ backgroundColor: "#034b92" }}>
+                      {" "}
+                    </Typography>
+                  </ListItem>
+                }
+              />
             </Accordion>
           </div>
         ))}
