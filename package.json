@@ -63,12 +63,14 @@
     "devall": "npm run server & npm run dev"
   },
   "eslintConfig": {
+    
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
   "browserslist": {
+    
     "production": [
       ">0.2%",
       "not dead",

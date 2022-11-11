@@ -176,7 +176,6 @@ export const ModalComponent = (props) => {
                       NFT Project name :
                     </div>
                     <TextField
-                    required
                       size="medium"
                       variant="standard"
                       // inputProps={{ style: { textAlign: "center" } }}
@@ -414,7 +413,7 @@ export const ModalComponent = (props) => {
                   >
                     Next
                   </Button> */}
-                  <Button
+                   <Button
                   style={{background: 'linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)', padding:"10px 44px", borderRadius:"0", fontFamily:"poppins-light"}}
                     variant="contained"
                     color="secondary"

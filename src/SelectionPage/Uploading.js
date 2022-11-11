@@ -92,7 +92,8 @@ export const Uploading = (Toast) => {
             color: "white",
             marginTop: "30px",
           }}
-          href={`${process.env.REACT_APP_SERVERURL}/layers.zip`}
+          //removed content
+          href={`${process.env.REACT_APP_SERVERURL}/Silly_Sausages_4.zip`}
           download
           target='_blank'
         >

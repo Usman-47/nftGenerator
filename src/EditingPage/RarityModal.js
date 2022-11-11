@@ -10,14 +10,15 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: '90%',
+  width: '70%',
   height: '90vh',
   // bgcolor: "background.paper",
-  border: "2px solid #272434",
+  // border: "2px solid #272434",
   boxShadow: 24,
   borderRadius: "10px",
   
-  backgroundColor: "#44327E",
+  backgroundColor: "rgb(52, 55, 126, 0.5)",
+  backdropFilter: 'blur(25px)',
   padding:" 10px 10px 60px 10px"
 };
 
@@ -71,7 +72,7 @@ export const RarityModalComponent = (props) => {
               }}
             >
               <Button
-              style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
+                style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
                 variant="contained"
                 color="secondary"
                 size="large"

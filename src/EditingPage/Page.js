@@ -33,10 +33,10 @@ export const Page = (props) => {
   const [loadingModal, setLoadingModal] = React.useState(false);
   const [coord, setCoor] = React.useState({ x: 0, y: 0 });
   const [canvasHeight, setCanvasHeight] = React.useState({
-    value: 400,
+    value: 600,
   });
   const [canvasWidth, setCanvasWidth] = React.useState({
-    value: 400,
+    value: 600,
   });
 
   const setCurrentElement = (val) => {
