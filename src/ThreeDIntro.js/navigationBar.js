@@ -11,12 +11,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/logo2.png";
-
+import Divider from "@mui/material/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import Hidden from "@material-ui/core/Hidden";
-
 // Using Inline Styling
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
-    background: "transparent",
+    background: "#2E2058",
     color: "white",
   },
 })((props) => (
@@ -67,12 +66,17 @@ const StyledMenuItem = withStyles((theme) => ({
 export const NavHomePage = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
+  const [anchorE3, setAnchorE3] = React.useState(null);
   const open = Boolean(anchorEl);
 
   const classes = useStyles();
   // ----------------
   const handleClick = (event) => {
     setAnchorE2(event.currentTarget);
+  };
+
+  const handleClick2 = (event) => {
+    setAnchorE3(event.currentTarget);
   };
 
   // -------------
@@ -85,6 +89,10 @@ export const NavHomePage = (props) => {
     setAnchorE2(null);
   };
 
+  const handleClose2 = () => {
+    setAnchorEl(null);
+    setAnchorE3(null);
+  };
   return (
     <AppBar
       position='static'
@@ -139,12 +147,16 @@ export const NavHomePage = (props) => {
 
         <Hidden smDown>
           <NavLink to='/'>
-            <div className='logo_div'>
-              <img width='210px' src={logo} alt='' />
+            <div className='logo-parent'>
+              <div className='logo_div'>
+                <img src={logo} alt='' className='nav-logo' />
+              </div>
             </div>
           </NavLink>
 
-          <div style={{ display: "flex", paddingTop: "20px" }}>
+          <div
+            style={{ display: "flex", paddingTop: "20px", paddingRight: "5%" }}
+          >
             <NavLink to='/'>
               <div className='eachOne'>
                 <Typography
@@ -154,7 +166,8 @@ export const NavHomePage = (props) => {
                   style={{
                     fontFamily: "poppins-light",
                     fontWeight: 600,
-                    fontSize: "14px",
+                    fontSize: "16px",
+                    color: "#fff",
                   }}
                 >
                   HOME
@@ -169,7 +182,8 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                 }}
                 onClick={() => {
                   props.setInstructionsOpen(true);
@@ -187,7 +201,8 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                 }}
                 onClick={() => {
                   props.setContactOpen(true);
@@ -205,7 +220,8 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                 }}
                 onClick={() => {
                   props.setAboutOpen(true);
@@ -224,28 +240,55 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                   padding: "14px 8px",
                 }}
-                onClick={handleClick}
+                onClick={handleClick2}
               >
                 WEB3 SERVICES <ArrowDropDownIcon />
               </Button>
               <StyledMenu
                 id='customized-menu'
-                anchorEl={anchorE2}
+                anchorEl={anchorE3}
                 keepMounted
-                open={Boolean(anchorE2)}
-                onClose={handleClose}
+                open={Boolean(anchorE3)}
+                onClose={handleClose2}
               >
                 <StyledMenuItem>
-                  <ListItemText primary='WEB3 SERVICES' />
+                  <ListItemText primary='Raffle' className='nav-drop-down' />
                 </StyledMenuItem>
+                <Divider />
                 <StyledMenuItem>
-                  <ListItemText primary='ANOTHER ACTION' />
+                  <ListItemText primary='Staking' className='nav-drop-down11' />
                 </StyledMenuItem>
+                <Divider />
                 <StyledMenuItem>
-                  <ListItemText primary='SOMETHING' />
+                  <ListItemText
+                    primary='ANOTHER ACTION'
+                    className='nav-drop-down11'
+                  />
+                </StyledMenuItem>
+                <Divider />
+                <StyledMenuItem>
+                  <ListItemText
+                    primary='Mutation'
+                    className='nav-drop-down11'
+                  />
+                </StyledMenuItem>
+                <Divider />
+                <StyledMenuItem>
+                  <ListItemText
+                    primary='Art Upgrades'
+                    className='nav-drop-down11'
+                  />
+                </StyledMenuItem>
+                <Divider />
+                <StyledMenuItem>
+                  <ListItemText
+                    primary='Chain Games'
+                    className='nav-drop-down12'
+                  />
                 </StyledMenuItem>
               </StyledMenu>
             </div>
@@ -257,7 +300,8 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                 }}
                 onClick={() => {
                   props.setAboutOpen(true);
@@ -266,7 +310,7 @@ export const NavHomePage = (props) => {
                 NFT TOOL SUIT
               </Typography>
             </div>
-            <div className='eachOne'>
+            {/* <div className='eachOne'>
               <Button
                 aria-controls='customized-menu'
                 aria-haspopup='true'
@@ -276,7 +320,8 @@ export const NavHomePage = (props) => {
                 style={{
                   fontFamily: "poppins-light",
                   fontWeight: 600,
-                  fontSize: "14px",
+                  fontSize: "16px",
+                  color: "#fff",
                   padding: "14px 8px",
                 }}
                 onClick={handleClick}
@@ -293,14 +338,16 @@ export const NavHomePage = (props) => {
                 <StyledMenuItem>
                   <ListItemText primary='WEB3 SERVICES' />
                 </StyledMenuItem>
+                <Divider />
                 <StyledMenuItem>
                   <ListItemText primary='ANOTHER ACTION' />
                 </StyledMenuItem>
+                <Divider />
                 <StyledMenuItem>
                   <ListItemText primary='SOMETHING' />
                 </StyledMenuItem>
               </StyledMenu>
-            </div>
+            </div> */}
           </div>
         </Hidden>
       </Toolbar>

@@ -25,6 +25,7 @@
     "directory-tree": "^3.0.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "formik": "^2.2.9",
     "fs": "^0.0.1-security",
     "latest-version": "^6.0.0",
     "lowdb": "^1.0.0",
@@ -63,14 +64,12 @@
     "devall": "npm run server & npm run dev"
   },
   "eslintConfig": {
-    
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
   "browserslist": {
-    
     "production": [
       ">0.2%",
       "not dead",

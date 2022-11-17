@@ -5,6 +5,9 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { Icon } from "@iconify/react";
 
 const Footer = () => {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <div
       className='footer_div'
@@ -28,9 +31,24 @@ const Footer = () => {
           fontSize: "28px",
         }}
       >
-        <TwitterIcon style={{ fontSize: "28px", cursor: "pointer" }} />
-        <Icon icon='mingcute:discord-line' style={{ cursor: "pointer" }} />
-        <img width='32px' src={me} alt='' style={{ cursor: "pointer" }} />
+        <TwitterIcon
+          style={{ fontSize: "28px", cursor: "pointer" }}
+          onClick={() => openInNewTab("https://twitter.com/RaginRoosters")}
+        />
+        <Icon
+          icon='mingcute:discord-line'
+          style={{ cursor: "pointer" }}
+          onClick={() => openInNewTab("https://discord.com/invite/JdVbrn2tA9")}
+        />
+        <img
+          width='32px'
+          src={me}
+          alt=''
+          style={{ cursor: "pointer" }}
+          onClick={() =>
+            openInNewTab("https://magiceden.io/marketplace/ragin_roosters")
+          }
+        />
       </div>
       <div style={{ fontSize: "14px" }}>2022, WHATSFORLAUNCH.</div>
     </div>

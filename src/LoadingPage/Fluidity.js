@@ -90,9 +90,9 @@ export const Fluidity = () => {
   };
 
   return (
-    <div className="trans">
+    <div className='trans'>
       <div>
-        <NavHomePage/>
+        <NavHomePage />
       </div>
 
       <div
@@ -101,15 +101,15 @@ export const Fluidity = () => {
           // paddingTop: "20vh",
           display: "flex",
           justifyContent: "center",
-          marginBottom:"200px"
+          marginBottom: "200px",
         }}
       >
         <div
-          className="typewriter"
+          className='typewriter'
           style={{
             maxWidth: "71vw",
             maxHeight: "8vh",
-            color:"white"
+            color: "white",
           }}
         >
           {/* <h2>Patience ... Awesome things on the way !&nbsp; </h2> */}
@@ -122,35 +122,41 @@ export const Fluidity = () => {
           // marginTop: "50px",
         }}
       >
-
-       {!isUploaded ? <Button
-        style={{background:"linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)"}}
-          variant="contained"
-          color="secondary"
-          size="large"
-          onClick={handleClickGenerate}
-          disabled={loading}
-        >
-          Generate
-        </Button>:    <FinalModalComponent isOpen={finalModal} handleClose={handleClose} />}
+        {!isUploaded ? (
+          <Button
+            style={{
+              background:
+                "linear-gradient(100.86deg, #4E39D7 14.47%, #C615A9 123.62%)",
+            }}
+            variant='contained'
+            color='secondary'
+            size='large'
+            onClick={handleClickGenerate}
+            disabled={loading}
+          >
+            Generate
+          </Button>
+        ) : (
+          <FinalModalComponent isOpen={finalModal} handleClose={handleClose} />
+        )}
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "2vh" }}
       >
         {loading && (
-          <div className="spinner-box">
-            <div className="configure-border-1">
-              <div className="configure-core"></div>
+          <div className='spinner-box'>
+            <div className='configure-border-1'>
+              <div className='configure-core'></div>
             </div>
-            <div className="configure-border-2">
-              <div className="configure-core"></div>
+            <div className='configure-border-2'>
+              <div className='configure-core'></div>
             </div>
           </div>
         )}
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <ToastContainer
-          position="top-right"
+          position='top-right'
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={true}
@@ -164,9 +170,9 @@ export const Fluidity = () => {
       {/* <div>
         <FinalModalComponent isOpen={finalModal} handleClose={handleClose} />
       </div> */}
-      <div style={{position:"fixed",  width: '100%', bottom:"0"}}>
-        <Footer/>
-        </div>
+      <div style={{ position: "fixed", width: "100%", bottom: "0" }}>
+        <Footer />
+      </div>
     </div>
   );
 };
