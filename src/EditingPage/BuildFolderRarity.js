@@ -4,6 +4,7 @@ import { TreeContext } from "./EditingPage";
 import TreeItem from "@material-ui/lab/TreeItem";
 import { Typography, TextField } from "@material-ui/core";
 import "./buildFolder.css";
+import AlienLogo from "./AlienLogo.png";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -54,11 +55,18 @@ export const FoldersRarity = (props) => {
                         //   .replaceAll("\\", "/")}`)}
                         // alt="item"
                         // style={{ width: "120px", height:"100px", }}
-                        // src={`${
-                        //   process.env.REACT_APP_SERVERURL
-                        // }${subfolder.path.slice(12)}`}
-                        src='/AlienLogo.png'
+                        src={`${
+                          process.env.REACT_APP_SERVERURL
+                        }${subfolder.path.slice(12)}`}
+                        // src={AlienLogo}
+                        // height='40px'
+                        // width='40px'
                       />
+                      {console.log(
+                        subfolder?.path?.slice(12),
+                        subfolder,
+                        "jkhgjhjhgkhgy"
+                      )}
                       <Typography
                         className='elementSubfolder'
                         style={{
