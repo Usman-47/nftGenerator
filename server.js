@@ -106,6 +106,7 @@ app.post("/uploadPath", (req, res) => {
   filePaths.forEach((file) => {
     fields.push({ name: file });
   });
+  return res.send(true);
 });
 
 app.post("/deleteLocalFiles", (req, res) => {
