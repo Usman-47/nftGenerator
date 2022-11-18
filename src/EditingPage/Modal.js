@@ -562,7 +562,7 @@ export const ModalComponent = (props) => {
                         // onClick={handleClick}
                         onClick={() => {
                           handleSubmit();
-                          // handleClick();
+                          handleClick();
                         }}
                       >
                         Create

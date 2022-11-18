@@ -58,6 +58,8 @@ export const FoldersRarity = (props) => {
                         src={`${process.env.REACT_APP_SERVERURL}${subfolder.path
                           .slice(15)
                           .replaceAll("\\", "/")}`}
+                        height='60px'
+                        width='60px'
                       />
                       <Typography
                         className='elementSubfolder'
